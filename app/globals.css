@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #09090b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #09090b;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --accent: #f4f4f5;
+  --accent-foreground: #09090b;
+  --brand: #4f46e5;
+  --destructive: #a2201c;
+  --destructive-foreground: #ffffff;
+  --border: #e4e4e7;
+  /* 3.23:1 on --background: WCAG 1.4.11 applies to control boundaries.
+     --border stays lighter because it only draws decorative dividers. */
+  --input: #8e8e96;
+  --ring: #4f46e5;
+  --rule: #d4d4d8;
+
+  --cat-infrastructure: #0b6e68;
+  --cat-horizontal: #4038b0;
+  --cat-vertical: #8f5504;
+  --cat-consumer: #a81d40;
+  --cat-emerging: #6a3bc0;
+
+  --cat-infrastructure-soft: #d3ece9;
+  --cat-horizontal-soft: #dedcf5;
+  --cat-vertical-soft: #f4e4cb;
+  --cat-consumer-soft: #f6dbe2;
+  --cat-emerging-soft: #e5dbf7;
+
+
+  /* Ten archetype colours: nine hues about 36 degrees apart plus one neutral.
+     Replaces the previous five accents duplicated at 62% toward the foreground,
+     which produced five same-hue pairs the eye could not separate. */
+  --archetype-platform-giant: #3862c4;
+  --archetype-suite-consolidator: #037879;
+  --archetype-best-of-breed: #92429e;
+  --archetype-vertical: #975716;
+  --archetype-commercial-oss: #007f26;
+  --archetype-plg-challenger: #b3363d;
+  --archetype-pe-rollup: #646a70;
+  --archetype-marketplace: #786825;
+  --archetype-ai-native: #794db6;
+  --archetype-si-channel: #287193;
+
+  --confidence-reported: #0b6e68;
+  --confidence-estimated: #8f5504;
+  --confidence-modeled: #4038b0;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #111113;
+  --card-foreground: #fafafa;
+  --popover: #111113;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #09090b;
+  --secondary: #1c1c1f;
+  --secondary-foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --accent: #1c1c1f;
+  --accent-foreground: #fafafa;
+  --brand: #818cf8;
+  --destructive: #f08d86;
+  --destructive-foreground: #14130f;
+  --border: #27272a;
+  /* 3.33:1 on --background, same reasoning as the light theme. */
+  --input: #65656d;
+  --ring: #818cf8;
+  --rule: #3f3f46;
+
+  --cat-infrastructure: #63d6ca;
+  --cat-horizontal: #a4aeff;
+  --cat-vertical: #e9b54c;
+  --cat-consumer: #ff93a9;
+  --cat-emerging: #c4a9ff;
+
+  --cat-infrastructure-soft: #10322f;
+  --cat-horizontal-soft: #1f2143;
+  --cat-vertical-soft: #372a12;
+  --cat-consumer-soft: #3a1c25;
+  --cat-emerging-soft: #2a1f44;
+
+
+  --archetype-platform-giant: #98b7f7;
+  --archetype-suite-consolidator: #3dcfd0;
+  --archetype-best-of-breed: #e198ec;
+  --archetype-vertical: #f8a052;
+  --archetype-commercial-oss: #78cf80;
+  --archetype-plg-challenger: #fa9895;
+  --archetype-pe-rollup: #b2b8bf;
+  --archetype-marketplace: #d2b63c;
+  --archetype-ai-native: #c3a6f8;
+  --archetype-si-channel: #5dc4f6;
+
+  --confidence-reported: #63d6ca;
+  --confidence-estimated: #e9b54c;
+  --confidence-modeled: #a4aeff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-rule: var(--rule);
+
+  --color-infrastructure: var(--cat-infrastructure);
+  --color-horizontal: var(--cat-horizontal);
+  --color-vertical: var(--cat-vertical);
+  --color-consumer: var(--cat-consumer);
+  --color-emerging: var(--cat-emerging);
+
+  --color-infrastructure-soft: var(--cat-infrastructure-soft);
+  --color-horizontal-soft: var(--cat-horizontal-soft);
+  --color-vertical-soft: var(--cat-vertical-soft);
+  --color-consumer-soft: var(--cat-consumer-soft);
+  --color-emerging-soft: var(--cat-emerging-soft);
+
+  --color-archetype-platform-giant: var(--archetype-platform-giant);
+  --color-archetype-suite-consolidator: var(--archetype-suite-consolidator);
+  --color-archetype-best-of-breed: var(--archetype-best-of-breed);
+  --color-archetype-vertical: var(--archetype-vertical);
+  --color-archetype-commercial-oss: var(--archetype-commercial-oss);
+  --color-archetype-plg-challenger: var(--archetype-plg-challenger);
+  --color-archetype-pe-rollup: var(--archetype-pe-rollup);
+  --color-archetype-marketplace: var(--archetype-marketplace);
+  --color-archetype-ai-native: var(--archetype-ai-native);
+  --color-archetype-si-channel: var(--archetype-si-channel);
+
+  --color-reported: var(--confidence-reported);
+  --color-estimated: var(--confidence-estimated);
+  --color-modeled: var(--confidence-modeled);
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  /* No serif in this design: `font-serif` resolves to the sans for headings. */
+  --font-serif: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-code), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /*
+   * The primary nav scrolls horizontally on narrow screens, but Windows renders a
+   * classic scrollbar with arrow buttons for `overflow-x-auto`, which showed up as
+   * stray arrows beside the theme toggle. Scrolling still works by drag, wheel and
+   * keyboard; only the chrome is hidden.
+   */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

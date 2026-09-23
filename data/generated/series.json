@@ -1,0 +1,2431 @@
+{
+  "marketSizes": [
+    {
+      "marketId": "ai-coding-assistants",
+      "point": {
+        "value": 0.55,
+        "year": 2024,
+        "unit": "USD_B",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "note": "Primary Menlo chart caption; enterprise spend only.",
+        "definition": "Menlo Ventures enterprise spend on AI coding tools"
+      }
+    },
+    {
+      "marketId": "ai-coding-assistants",
+      "point": {
+        "value": 4,
+        "year": 2025,
+        "unit": "USD_B",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "note": "Enterprise spend on AI coding tools (code completion 2.3 + agents/app builders). Excludes individual consumer subscriptions partially.",
+        "definition": "Menlo Ventures enterprise spend on AI coding tools"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 8.13,
+        "year": 2007,
+        "unit": "USD_B",
+        "sourceId": "DE06394",
+        "confidence": "reported",
+        "note": "Same release as the 2008 row, which gives 2007 revenue of $8.13B as the growth base. Reprint of the Gartner release. Narrower pre-2014 CRM definition",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 9.15,
+        "year": 2008,
+        "unit": "USD_B",
+        "sourceId": "DE06394",
+        "confidence": "reported",
+        "note": "Reprint of the Gartner release on insurance-canada.ca. Narrower pre-2014 CRM definition",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 18,
+        "year": 2012,
+        "unit": "USD_B",
+        "sourceId": "DC5FB0B",
+        "confidence": "reported",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 20.4,
+        "year": 2013,
+        "unit": "USD_B",
+        "sourceId": "DC5FB0B",
+        "confidence": "reported",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 23.2,
+        "year": 2014,
+        "unit": "USD_B",
+        "sourceId": "DF85353",
+        "confidence": "estimated",
+        "note": "Secondary (Forbes contributor) summarising Gartner market share report. Restated to 23.4 in the 2016 release.",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 26.3,
+        "year": 2015,
+        "unit": "USD_B",
+        "sourceId": "DA3B705",
+        "confidence": "reported",
+        "note": "Secondary summary of Gartner press release 'CRM Software Market Grew 12.3 Percent'. Note 2014 restated 23.2->23.4.",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 48.2,
+        "year": 2018,
+        "unit": "USD_B",
+        "sourceId": "DDCB13C",
+        "confidence": "reported",
+        "note": "Broader CX + CRM definition from here on. Sourced independently; it happens to match the template example",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 61.6,
+        "year": 2019,
+        "unit": "USD_B",
+        "sourceId": "D73F086",
+        "confidence": "reported",
+        "note": "Gartner 'Customer Experience and Relationship Management' scope (broader than pre-2018 CRM). Blog quoting paywalled Gartner report.",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 69.3,
+        "year": 2020,
+        "unit": "USD_B",
+        "sourceId": "D73F086",
+        "confidence": "reported",
+        "note": "CX & relationship management scope; blog quoting paywalled Gartner report.",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 96.3,
+        "year": 2022,
+        "unit": "USD_B",
+        "sourceId": "D3744C1",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "point": {
+        "value": 128,
+        "year": 2024,
+        "unit": "USD_B",
+        "sourceId": "DC70B2D",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7). Includes cross-CRM segments (CDP, VoC)",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "point": {
+        "value": 13.8,
+        "year": 2005,
+        "unit": "USD_B",
+        "sourceId": "D5E6ADE",
+        "confidence": "estimated",
+        "note": "RDBMS only; excludes non-relational. Business Wire copy of the Gartner release",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "point": {
+        "value": 15.2,
+        "year": 2006,
+        "unit": "USD_B",
+        "sourceId": "D502DD3",
+        "confidence": "reported",
+        "note": "RDBMS only. Secondary report (IT Jungle) of Gartner figures",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "point": {
+        "value": 46,
+        "year": 2018,
+        "unit": "USD_B",
+        "sourceId": "D6AAF9E",
+        "confidence": "reported",
+        "note": "DEFINITION CHANGE: full DBMS incl. cloud dbPaaS and non-relational; broader than the 2005-06 RDBMS rows",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "point": {
+        "value": 80,
+        "high": 80,
+        "year": 2021,
+        "unit": "USD_B",
+        "sourceId": "DEE23E0",
+        "confidence": "estimated",
+        "note": "'Nearly $80B'. Secondary (Cloud Database Report newsletter citing Gartner). Sourced independently; it happens to match the template example",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "point": {
+        "value": 91,
+        "low": 91,
+        "year": 2022,
+        "unit": "USD_B",
+        "sourceId": "D838EB5",
+        "confidence": "estimated",
+        "note": "'Over $91B'. Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "point": {
+        "value": 103.2,
+        "year": 2023,
+        "unit": "USD_B",
+        "sourceId": "D5C3B76",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "point": {
+        "value": 119.7,
+        "year": 2024,
+        "unit": "USD_B",
+        "sourceId": "DCE8813",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "erp",
+      "point": {
+        "value": 35,
+        "year": 2018,
+        "unit": "USD_B",
+        "sourceId": "DCA503B",
+        "confidence": "reported",
+        "note": "Secondary: SAP announcement quoting Gartner 'Market Share Analysis: ERP Software, Worldwide, 2018'. Date not shown on the page; 2019",
+        "definition": "Gartner ERP software revenue"
+      }
+    },
+    {
+      "marketId": "erp",
+      "point": {
+        "value": 39,
+        "high": 39,
+        "year": 2019,
+        "unit": "USD_B",
+        "sourceId": "DC91286",
+        "confidence": "estimated",
+        "note": "'Nearing $39B'. Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner ERP software revenue"
+      }
+    },
+    {
+      "marketId": "erp",
+      "point": {
+        "value": 40,
+        "year": 2020,
+        "unit": "USD_B",
+        "sourceId": "DEA3C6F",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner ERP software revenue"
+      }
+    },
+    {
+      "marketId": "erp",
+      "point": {
+        "value": 44,
+        "year": 2022,
+        "unit": "USD_B",
+        "sourceId": "DEB1019",
+        "confidence": "estimated",
+        "note": "Public abstract (see rule 7). The 2023 report restates 2022 as $45B",
+        "definition": "Gartner ERP software revenue"
+      }
+    },
+    {
+      "marketId": "erp",
+      "point": {
+        "value": 51,
+        "year": 2023,
+        "unit": "USD_B",
+        "sourceId": "DCEDC87",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner ERP software revenue"
+      }
+    },
+    {
+      "marketId": "erp",
+      "point": {
+        "value": 66,
+        "year": 2024,
+        "unit": "USD_B",
+        "sourceId": "D58E5CF",
+        "confidence": "estimated",
+        "note": "DEFINITION CHANGE: this Gartner series puts 2023 at $59B vs $51B in the row above. Rebase or drop",
+        "definition": "Gartner ERP software revenue (2024 edition, restated upward)"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "point": {
+        "value": 12.5,
+        "year": 2025,
+        "unit": "USD_B",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "note": "Enterprise spend on model APIs; excludes consumer subscriptions (ChatGPT Plus etc.) and cloud inference/serving. Based on a survey of 495 US enterprise AI decision-makers (conducted 7–25 Nov 2025) plus a bottom-up model. Menlo restated total generative-AI spend to exclude inference: US$1.7B for 2023 and US$11.5B for 2024 (its 2024 report had said US$13.8B). The mid-2025 8.4 and 2024 3.5 are the earlier vintage.",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 99.6,
+        "year": 2016,
+        "unit": "USD_B",
+        "sourceId": "D8598E9",
+        "confidence": "estimated",
+        "note": "Same-year Newzoo estimate (no final restated figure found); consumer spend, excludes hardware and ads. Implied 2015 ≈91.8. Pre-2020 Newzoo methodology differs from current. Same-year estimate or forecast, not a final figure.",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 108.9,
+        "year": 2017,
+        "unit": "USD_B",
+        "sourceId": "D425BC3",
+        "confidence": "estimated",
+        "note": "Same-year Newzoo estimate via secondary blog. Older methodology. Same-year estimate or forecast, not a final figure.",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 152.1,
+        "year": 2019,
+        "unit": "USD_B",
+        "sourceId": "DA39F4B",
+        "confidence": "estimated",
+        "note": "Same-year Newzoo estimate; later Newzoo vintages restated upward (cf. 2020: 159.3 forecast vs 177.8 restated). Same-year estimate or forecast, not a final figure.",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 177.8,
+        "year": 2020,
+        "unit": "USD_B",
+        "sourceId": "DF4E998",
+        "confidence": "reported",
+        "note": "Secondary (Wikipedia citing Newzoo). Pre-2025 Newzoo methodology. Excludes hardware",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 203.1,
+        "year": 2022,
+        "unit": "USD_B",
+        "sourceId": "DEE7F7B",
+        "confidence": "estimated",
+        "note": "Same-year estimate; Newzoo later revised 2022 down (market declined). Use with caution. Same-year estimate or forecast, not a final figure.",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 182.7,
+        "year": 2024,
+        "unit": "USD_B",
+        "sourceId": "DED552B",
+        "confidence": "reported",
+        "note": "Final restated value; replaces already-collected 177.9 (Q1'25 interim revision; original 184.3). Secondary newsletter summarising Newzoo.",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 201.6,
+        "year": 2025,
+        "unit": "USD_B",
+        "sourceId": "D8B1436",
+        "confidence": "reported",
+        "note": "Secondary (GamesBeat) on a Newzoo quarterly update. Date not shown; 2026. Excludes hardware",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "games",
+      "point": {
+        "value": 213.9,
+        "year": 2026,
+        "unit": "USD_B",
+        "sourceId": "D8202E4",
+        "confidence": "estimated",
+        "note": "6.1% growth implies 2025 base ≈201.6 - matches already-collected 2025=201.6 (newer vintage than 188.8). Secondary report. Same-year estimate or forecast, not a final figure.",
+        "definition": "Newzoo global games market (consumer spend, excl. hardware)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "point": {
+        "value": 28.142,
+        "year": 2009,
+        "unit": "USD_B",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "note": "Client + server OS vendor revenue (USD millions). Repost of Gartner press release.",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "point": {
+        "value": 30.35,
+        "year": 2010,
+        "unit": "USD_B",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "note": "Client + server OS vendor revenue.",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 6.4,
+        "year": 2004,
+        "unit": "USD_B",
+        "sourceId": "D48CF5D",
+        "confidence": "estimated",
+        "note": "Secondary: academic paper figure citing Gartner releases. Publication date not shown on the page. 'Nearly $6.4B'",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 14.8,
+        "year": 2009,
+        "unit": "USD_B",
+        "sourceId": "D4BB716",
+        "confidence": "reported",
+        "note": "Reprint of the Gartner release (webwire). Release date not shown on the page; 2010",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 16.5,
+        "year": 2010,
+        "unit": "USD_B",
+        "sourceId": "D4D3CDE",
+        "confidence": "reported",
+        "note": "Gartner vendor revenue (market share series). 2009 shown as 14.7 here vs 14.8 already collected (minor restatement).",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 17.7,
+        "year": 2011,
+        "unit": "USD_B",
+        "sourceId": "D48CF5D",
+        "confidence": "estimated",
+        "note": "Secondary: academic paper figure citing Gartner releases. Publication date not shown on the page. 'About $17.7B'",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 19,
+        "year": 2012,
+        "unit": "USD_B",
+        "sourceId": "DE03564",
+        "confidence": "estimated",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 20.3,
+        "year": 2013,
+        "unit": "USD_B",
+        "sourceId": "D2A10F7",
+        "confidence": "reported",
+        "note": "Restated figure; the 2014-06-10 release gave $19.9B for 2013",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 21.4,
+        "year": 2014,
+        "unit": "USD_B",
+        "sourceId": "D2A10F7",
+        "confidence": "reported",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 22.1,
+        "year": 2015,
+        "unit": "USD_B",
+        "sourceId": "D56A76B",
+        "confidence": "reported",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 23.6,
+        "year": 2016,
+        "unit": "USD_B",
+        "sourceId": "DE662D6",
+        "confidence": "estimated",
+        "note": "Gartner public research abstract (flag). Vendor revenue series. Implied restated 2015 base ≈21.8. Last point of the vendor-revenue series found.",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 32.1,
+        "year": 2017,
+        "unit": "USD_B",
+        "sourceId": "DDA5D15",
+        "confidence": "estimated",
+        "note": "Public abstract (see rule 7). LIKELY DEFINITION CHANGE: 10.1% growth implies a 2016 base of about $29B vs $22.1B for 2015",
+        "definition": "Gartner security software (market share reports, wider scope from 2017)"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 61.4,
+        "year": 2022,
+        "unit": "USD_B",
+        "sourceId": "D3E5B13",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner security software (market share reports, wider scope from 2017)"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 95,
+        "year": 2024,
+        "unit": "USD_B",
+        "sourceId": "D627283",
+        "confidence": "estimated",
+        "note": "Public abstract of a paywalled report (see rule 7)",
+        "definition": "Gartner security software (market share reports, wider scope from 2017)"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 105.94,
+        "year": 2025,
+        "unit": "USD_B",
+        "sourceId": "DBD1A55",
+        "confidence": "estimated",
+        "note": "End-user spending (USD millions; 2024/2025/2026). Same vintage as already-collected 2024=95.0. Published mid-2025 so kind=forecast; no post-year actual found.",
+        "definition": "Gartner end-user spending on security software"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "point": {
+        "value": 121.154,
+        "year": 2026,
+        "unit": "USD_B",
+        "sourceId": "DBD1A55",
+        "confidence": "estimated",
+        "note": "End-user spending forecast.",
+        "definition": "Gartner end-user spending on security software"
+      }
+    }
+  ],
+  "marketShares": [
+    {
+      "marketId": "crm",
+      "year": 2011,
+      "companyId": "salesforce",
+      "point": {
+        "value": 16.7,
+        "year": 2011,
+        "unit": "percent",
+        "sourceId": "D76267B",
+        "confidence": "reported",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2013,
+      "companyId": "salesforce",
+      "point": {
+        "value": 16.1,
+        "year": 2013,
+        "unit": "percent",
+        "sourceId": "DC5FB0B",
+        "confidence": "reported",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2014,
+      "companyId": "salesforce",
+      "point": {
+        "value": 18.2,
+        "year": 2014,
+        "unit": "percent",
+        "sourceId": "DA3B705",
+        "confidence": "reported",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2015,
+      "companyId": "salesforce",
+      "point": {
+        "value": 19.7,
+        "year": 2015,
+        "unit": "percent",
+        "sourceId": "DA3B705",
+        "confidence": "reported",
+        "definition": "Gartner CRM software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2017,
+      "companyId": "salesforce",
+      "point": {
+        "value": 18.3,
+        "year": 2017,
+        "unit": "percent",
+        "sourceId": "DDCB13C",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2017,
+      "companyId": "sap",
+      "point": {
+        "value": 8.3,
+        "year": 2017,
+        "unit": "percent",
+        "sourceId": "DDCB13C",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2018,
+      "companyId": "salesforce",
+      "point": {
+        "value": 19.5,
+        "year": 2018,
+        "unit": "percent",
+        "sourceId": "DDCB13C",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2018,
+      "companyId": "sap",
+      "point": {
+        "value": 8.3,
+        "year": 2018,
+        "unit": "percent",
+        "sourceId": "DDCB13C",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2019,
+      "companyId": "sap",
+      "point": {
+        "value": 5.7,
+        "year": 2019,
+        "unit": "percent",
+        "sourceId": "D73F086",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2019,
+      "companyId": "oracle",
+      "point": {
+        "value": 4.7,
+        "year": 2019,
+        "unit": "percent",
+        "sourceId": "D73F086",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2020,
+      "companyId": "sap",
+      "point": {
+        "value": 5.2,
+        "year": 2020,
+        "unit": "percent",
+        "sourceId": "D73F086",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2020,
+      "companyId": "oracle",
+      "point": {
+        "value": 4.4,
+        "year": 2020,
+        "unit": "percent",
+        "sourceId": "D73F086",
+        "confidence": "reported",
+        "definition": "Gartner customer experience and relationship management (CX+CRM) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2004,
+      "companyId": "oracle",
+      "point": {
+        "value": 48.9,
+        "year": 2004,
+        "unit": "percent",
+        "sourceId": "D5E6ADE",
+        "confidence": "estimated",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2004,
+      "companyId": "ibm",
+      "point": {
+        "value": 22.4,
+        "year": 2004,
+        "unit": "percent",
+        "sourceId": "D5E6ADE",
+        "confidence": "estimated",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2004,
+      "companyId": "microsoft",
+      "point": {
+        "value": 13.9,
+        "year": 2004,
+        "unit": "percent",
+        "sourceId": "D5E6ADE",
+        "confidence": "estimated",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2005,
+      "companyId": "oracle",
+      "point": {
+        "value": 48.6,
+        "year": 2005,
+        "unit": "percent",
+        "sourceId": "D6427AE",
+        "confidence": "reported",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2005,
+      "companyId": "ibm",
+      "point": {
+        "value": 22,
+        "year": 2005,
+        "unit": "percent",
+        "sourceId": "D6427AE",
+        "confidence": "reported",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2005,
+      "companyId": "microsoft",
+      "point": {
+        "value": 15,
+        "year": 2005,
+        "unit": "percent",
+        "sourceId": "D6427AE",
+        "confidence": "reported",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2006,
+      "companyId": "oracle",
+      "point": {
+        "value": 47.1,
+        "year": 2006,
+        "unit": "percent",
+        "sourceId": "D502DD3",
+        "confidence": "reported",
+        "definition": "Gartner relational database (RDBMS) software revenue"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2021,
+      "companyId": "microsoft",
+      "point": {
+        "value": 24,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "DEE23E0",
+        "confidence": "reported",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2021,
+      "companyId": "amazon",
+      "point": {
+        "value": 23.9,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "DEE23E0",
+        "confidence": "reported",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2021,
+      "companyId": "oracle",
+      "point": {
+        "value": 20.6,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "DEE23E0",
+        "confidence": "reported",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2021,
+      "companyId": "google",
+      "point": {
+        "value": 6.5,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "DEE23E0",
+        "confidence": "reported",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "databases",
+      "year": 2021,
+      "companyId": "ibm",
+      "point": {
+        "value": 5.6,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "DEE23E0",
+        "confidence": "reported",
+        "definition": "Gartner DBMS revenue incl. cloud dbPaaS and non-relational"
+      }
+    },
+    {
+      "marketId": "erp",
+      "year": 2012,
+      "companyId": "sap",
+      "point": {
+        "value": 24.6,
+        "year": 2012,
+        "unit": "percent",
+        "sourceId": "DFD8159",
+        "confidence": "reported",
+        "definition": "Gartner ERP software revenue"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2023,
+      "companyId": "openai",
+      "point": {
+        "value": 50,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2023,
+      "companyId": "anthropic",
+      "point": {
+        "value": 12,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2023,
+      "companyId": "google",
+      "point": {
+        "value": 7,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2024,
+      "companyId": "openai",
+      "point": {
+        "value": 34,
+        "year": 2024,
+        "unit": "percent",
+        "sourceId": "DF139E1",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2024,
+      "companyId": "anthropic",
+      "point": {
+        "value": 24,
+        "year": 2024,
+        "unit": "percent",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2025,
+      "companyId": "anthropic",
+      "point": {
+        "value": 40,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2025,
+      "companyId": "openai",
+      "point": {
+        "value": 27,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "foundation-model-apis",
+      "year": 2025,
+      "companyId": "google",
+      "point": {
+        "value": 21,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D02B5A3",
+        "confidence": "reported",
+        "definition": "Menlo Ventures enterprise spend on foundation-model APIs"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2009,
+      "companyId": "microsoft",
+      "point": {
+        "value": 77.9,
+        "year": 2009,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2009,
+      "companyId": "ibm",
+      "point": {
+        "value": 7.7,
+        "year": 2009,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2009,
+      "companyId": "hp",
+      "point": {
+        "value": 3.9,
+        "year": 2009,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2009,
+      "companyId": "red-hat",
+      "point": {
+        "value": 1.8,
+        "year": 2009,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2009,
+      "companyId": "apple",
+      "point": {
+        "value": 1.6,
+        "year": 2009,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2010,
+      "companyId": "microsoft",
+      "point": {
+        "value": 78.6,
+        "year": 2010,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2010,
+      "companyId": "ibm",
+      "point": {
+        "value": 7.5,
+        "year": 2010,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2010,
+      "companyId": "hp",
+      "point": {
+        "value": 3.7,
+        "year": 2010,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2010,
+      "companyId": "oracle",
+      "point": {
+        "value": 2.6,
+        "year": 2010,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2010,
+      "companyId": "red-hat",
+      "point": {
+        "value": 2,
+        "year": 2010,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "operating-systems",
+      "year": 2010,
+      "companyId": "apple",
+      "point": {
+        "value": 1.7,
+        "year": 2010,
+        "unit": "percent",
+        "sourceId": "DDAEFA6",
+        "confidence": "reported",
+        "definition": "Gartner operating system software vendor revenue (client + server)"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2014,
+      "companyId": "symantec",
+      "point": {
+        "value": 17.2,
+        "year": 2014,
+        "unit": "percent",
+        "sourceId": "D2A10F7",
+        "confidence": "reported",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2014,
+      "companyId": "intel-mcafee",
+      "point": {
+        "value": 8.5,
+        "year": 2014,
+        "unit": "percent",
+        "sourceId": "D2A10F7",
+        "confidence": "reported",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2014,
+      "companyId": "ibm",
+      "point": {
+        "value": 6.9,
+        "year": 2014,
+        "unit": "percent",
+        "sourceId": "D2A10F7",
+        "confidence": "reported",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2014,
+      "companyId": "trend-micro",
+      "point": {
+        "value": 4.9,
+        "year": 2014,
+        "unit": "percent",
+        "sourceId": "D2A10F7",
+        "confidence": "reported",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2014,
+      "companyId": "emc-rsa",
+      "point": {
+        "value": 3.7,
+        "year": 2014,
+        "unit": "percent",
+        "sourceId": "D2A10F7",
+        "confidence": "reported",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2015,
+      "companyId": "symantec",
+      "point": {
+        "value": 15.2,
+        "year": 2015,
+        "unit": "percent",
+        "sourceId": "D0C36A6",
+        "confidence": "estimated",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2015,
+      "companyId": "intel-mcafee",
+      "point": {
+        "value": 7.9,
+        "year": 2015,
+        "unit": "percent",
+        "sourceId": "D0C36A6",
+        "confidence": "estimated",
+        "definition": "Gartner security software vendor revenue"
+      }
+    },
+    {
+      "marketId": "security-software",
+      "year": 2015,
+      "companyId": "ibm",
+      "point": {
+        "value": 6.6,
+        "year": 2015,
+        "unit": "percent",
+        "sourceId": "D0C36A6",
+        "confidence": "estimated",
+        "definition": "Gartner security software vendor revenue"
+      }
+    }
+  ],
+  "industrySize": [
+    {
+      "scope": "us",
+      "definition": "US user expenditure on software products and programming services (INPUT)",
+      "point": {
+        "value": 0.994,
+        "year": 1970,
+        "unit": "USD_B",
+        "sourceId": "DE9A4AF",
+        "confidence": "reported",
+        "note": "Software products $0.2B and programming services $0.7B.",
+        "definition": "US user expenditure on software products and programming services (INPUT)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US user expenditure on software products and programming services (INPUT)",
+      "point": {
+        "value": 2.162,
+        "year": 1975,
+        "unit": "USD_B",
+        "sourceId": "DE9A4AF",
+        "confidence": "reported",
+        "note": "Software products $0.8B and programming services $1.4B.",
+        "definition": "US user expenditure on software products and programming services (INPUT)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US user expenditure on software products and programming services (INPUT)",
+      "point": {
+        "value": 5.711,
+        "year": 1980,
+        "unit": "USD_B",
+        "sourceId": "DE9A4AF",
+        "confidence": "reported",
+        "note": "Software products $2.7B and programming services $3.0B.",
+        "definition": "US user expenditure on software products and programming services (INPUT)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US user expenditure on software products and programming services (INPUT)",
+      "point": {
+        "value": 19.519,
+        "year": 1985,
+        "unit": "USD_B",
+        "sourceId": "DE9A4AF",
+        "confidence": "reported",
+        "note": "Software products $13.3B and programming services $6.2B.",
+        "definition": "US user expenditure on software products and programming services (INPUT)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US user expenditure on software products and programming services (INPUT)",
+      "point": {
+        "value": 44.468,
+        "year": 1990,
+        "unit": "USD_B",
+        "sourceId": "DE9A4AF",
+        "confidence": "reported",
+        "note": "Software products $34.1B and programming services $10.4B.",
+        "definition": "US user expenditure on software products and programming services (INPUT)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US user expenditure on software products and programming services (INPUT)",
+      "point": {
+        "value": 73.63,
+        "year": 1995,
+        "unit": "USD_B",
+        "sourceId": "DE9A4AF",
+        "confidence": "reported",
+        "note": "Software products $58.3B and programming services $15.3B.",
+        "definition": "US user expenditure on software products and programming services (INPUT)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 72.098,
+        "year": 1998,
+        "unit": "USD_B",
+        "sourceId": "D89D74B",
+        "confidence": "reported",
+        "note": "Earlier survey vintage; FRED's current vintage starts in 2002.",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 80.959,
+        "year": 1999,
+        "unit": "USD_B",
+        "sourceId": "D89D74B",
+        "confidence": "reported",
+        "note": "Earlier survey vintage; FRED's current vintage starts in 2002.",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 88.042,
+        "year": 2000,
+        "unit": "USD_B",
+        "sourceId": "D89D74B",
+        "confidence": "reported",
+        "note": "Earlier survey vintage; FRED's current vintage starts in 2002.",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US user expenditure on software products and programming services (INPUT)",
+      "point": {
+        "value": 138.089,
+        "year": 2000,
+        "unit": "USD_B",
+        "sourceId": "DE9A4AF",
+        "confidence": "reported",
+        "note": "Software products $104.7B and programming services $33.4B.",
+        "definition": "US user expenditure on software products and programming services (INPUT)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 103.506,
+        "year": 2002,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 103.701,
+        "year": 2003,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 110.205,
+        "year": 2004,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 116.643,
+        "year": 2005,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 125.203,
+        "year": 2006,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 135.401,
+        "year": 2007,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 144.248,
+        "year": 2008,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 142.237,
+        "year": 2009,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 150.459,
+        "year": 2010,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 164.79,
+        "year": 2011,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 171.075,
+        "year": 2012,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 188.791,
+        "year": 2013,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 209.092,
+        "year": 2014,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 222.852,
+        "year": 2015,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 249.371,
+        "year": 2016,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 276.234,
+        "year": 2017,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 295.225,
+        "year": 2018,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 318.622,
+        "year": 2019,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 350.136,
+        "year": 2020,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 402.39,
+        "year": 2021,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "us",
+      "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)",
+      "point": {
+        "value": 453.549,
+        "year": 2022,
+        "unit": "USD_B",
+        "sourceId": "DD61B8C",
+        "confidence": "reported",
+        "definition": "US software publishers' revenue (Census, NAICS 5112, employer firms)"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Worldwide packaged software (OECD and IDC)",
+      "point": {
+        "value": 52,
+        "year": 1991,
+        "unit": "USD_B",
+        "sourceId": "D3B1063",
+        "confidence": "estimated",
+        "note": "Page blocked automated fetching; quote seen in a search snippet.",
+        "definition": "Worldwide packaged software (OECD and IDC)"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Worldwide packaged software (OECD and IDC)",
+      "point": {
+        "value": 88,
+        "year": 1995,
+        "unit": "USD_B",
+        "sourceId": "DC8FE38",
+        "confidence": "estimated",
+        "note": "OECD countries only, which the OECD puts at 94% of the world market. PDF text could not be extracted; quote seen in a search snippet.",
+        "definition": "Worldwide packaged software (OECD and IDC)"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Worldwide packaged software (OECD and IDC)",
+      "point": {
+        "value": 109.3,
+        "year": 1996,
+        "unit": "USD_B",
+        "sourceId": "D515900",
+        "confidence": "reported",
+        "note": "Copy hosted by princeton.edu.",
+        "definition": "Worldwide packaged software (OECD and IDC)"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Worldwide packaged software (OECD and IDC)",
+      "point": {
+        "value": 196,
+        "year": 2001,
+        "unit": "USD_B",
+        "sourceId": "DEF3D9C",
+        "confidence": "estimated",
+        "note": "PDF text could not be extracted; quote seen in a search snippet.",
+        "definition": "Worldwide packaged software (OECD and IDC)"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner enterprise software vendor revenue",
+      "point": {
+        "value": 226,
+        "year": 2009,
+        "unit": "USD_B",
+        "sourceId": "D162949",
+        "confidence": "reported",
+        "definition": "Gartner enterprise software vendor revenue"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner enterprise software vendor revenue",
+      "point": {
+        "value": 245,
+        "year": 2010,
+        "unit": "USD_B",
+        "sourceId": "D162949",
+        "confidence": "reported",
+        "definition": "Gartner enterprise software vendor revenue"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner total software vendor revenue",
+      "point": {
+        "value": 388.5,
+        "year": 2012,
+        "unit": "USD_B",
+        "sourceId": "DD02A4B",
+        "confidence": "reported",
+        "definition": "Gartner total software vendor revenue"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner total software vendor revenue",
+      "point": {
+        "value": 407.3,
+        "year": 2013,
+        "unit": "USD_B",
+        "sourceId": "DD02A4B",
+        "confidence": "reported",
+        "definition": "Gartner total software vendor revenue"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner enterprise software vendor revenue",
+      "point": {
+        "value": 708.5,
+        "year": 2022,
+        "unit": "USD_B",
+        "sourceId": "DCEAD92",
+        "confidence": "estimated",
+        "note": "gartner.com blocked automated fetching; quote seen in a search snippet of the public abstract.",
+        "definition": "Gartner enterprise software vendor revenue"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner enterprise software vendor revenue",
+      "point": {
+        "value": 785.1,
+        "year": 2023,
+        "unit": "USD_B",
+        "sourceId": "D3665C1",
+        "confidence": "estimated",
+        "note": "gartner.com blocked automated fetching; quote seen in a search snippet of the public abstract.",
+        "definition": "Gartner enterprise software vendor revenue"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner end-user spending on software",
+      "point": {
+        "value": 1271,
+        "year": 2025,
+        "unit": "USD_B",
+        "sourceId": "S01",
+        "confidence": "reported",
+        "definition": "Gartner end-user spending on software"
+      }
+    },
+    {
+      "scope": "world",
+      "definition": "Gartner end-user spending on software",
+      "point": {
+        "value": 1468,
+        "year": 2026,
+        "unit": "USD_B",
+        "sourceId": "S01",
+        "confidence": "estimated",
+        "note": "Forecast for the current year.",
+        "definition": "Gartner end-user spending on software"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "D02B5A3",
+      "title": "2025: The State of Generative AI in the Enterprise",
+      "publisher": "Menlo Ventures",
+      "date": "2025-12-09",
+      "kind": "analyst",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D0C36A6",
+      "title": "Gartner Says Worldwide Security Software Market Grew 3.7 Percent in 2015",
+      "publisher": "Gartner",
+      "date": "2016-07-14",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2016-07-14-gartner-says-worldwide-security-software-market-grew-3-percent-in-2015",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D162949",
+      "title": "Worldwide enterprise software market grows 8.5% in 2010 (Telecompaper)",
+      "publisher": "Gartner",
+      "date": "2011",
+      "kind": "press",
+      "url": "https://www.telecompaper.com/news/worldwide-enterprise-software-market-grows-8-5-in-2010--801910",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D2A10F7",
+      "title": "Gartner Says Worldwide Security Software Market Grew 5.3 Percent in 2014 (reprint)",
+      "publisher": "Gartner",
+      "date": "2015-05-27",
+      "kind": "press",
+      "url": "https://aseantechsec.com/gartner-says-worldwide-security-software-market-grew-5-3-percent-in-2014/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D3665C1",
+      "title": "Market Share: All Software Markets, Worldwide, 2023",
+      "publisher": "Gartner",
+      "date": "2024",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/5367363",
+      "verified": false,
+      "reliability": "primary"
+    },
+    {
+      "id": "D3744C1",
+      "title": "Market Share Analysis: Customer Experience and Relationship Management Software, Worldwide, 2022",
+      "publisher": "Gartner",
+      "date": "2023-08-31",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/4700599",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D3B1063",
+      "title": "Locating packaged software in information systems research",
+      "publisher": "The Economist, cited in European Journal of Information Systems",
+      "date": "2001",
+      "kind": "academic",
+      "url": "https://www.tandfonline.com/doi/full/10.1057/palgrave.ejis.3000706",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D3E5B13",
+      "title": "Market Share Analysis: Security Software, Worldwide, 2022",
+      "publisher": "Gartner",
+      "date": "2023-09-26",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/4781631",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D425BC3",
+      "title": "The Global Standing of Video Games (MSU globalEDGE)",
+      "publisher": "Newzoo",
+      "date": "2017",
+      "kind": "analyst",
+      "url": "https://globaledge.msu.edu/blog/postamp/54524/the-global-standing-of-video-games",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D48CF5D",
+      "title": "Growth of Worldwide Security Software Market (Source: Gartner Group press releases)",
+      "publisher": "Gartner",
+      "date": "2004",
+      "kind": "analyst",
+      "url": "https://www.researchgate.net/figure/Growth-of-Worldwide-Security-Software-Market-Source-Gartner-Group-press-releases_fig1_256695271",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D4BB716",
+      "title": "Gartner Says Security Software Market is Poised for 11 Percent Growth in 2010",
+      "publisher": "Gartner",
+      "date": "2009",
+      "kind": "analyst",
+      "url": "https://www.webwire.com/ViewPressRel.asp?aId=121439",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D4D3CDE",
+      "title": "Security software revenue grows 12% to USD 16.5 bln in 2010 (Telecompaper)",
+      "publisher": "Gartner",
+      "date": "2011",
+      "kind": "analyst",
+      "url": "https://www.telecompaper.com/news/security-software-revenue-grows-12-to-usd-16-5-bln-in-2010--808027",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D502DD3",
+      "title": "Database Sales Grew By 14.2 Percent in 2006, Says Gartner",
+      "publisher": "Gartner",
+      "date": "2007-06-25",
+      "kind": "analyst",
+      "url": "https://www.itjungle.com/2007/06/25/tfh062507-story08/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D515900",
+      "title": "Measuring Electronic Commerce: International Trade in Software (DSTI/ICCP/IE(98)3/FINAL)",
+      "publisher": "OECD",
+      "date": "1998",
+      "kind": "analyst",
+      "url": "https://www.princeton.edu/~ina/internet/OECDinternetcommerce.PDF",
+      "verified": true,
+      "reliability": "primary"
+    },
+    {
+      "id": "D56A76B",
+      "title": "Global security software market grew 3.7% to $22.1 bn in 2015 (Forbes India)",
+      "publisher": "Gartner",
+      "date": "2016-07-14",
+      "kind": "press",
+      "url": "https://www.forbesindia.com/article/special/global-security-software-market-grew-3.7-to-$22.1-bn-in-2015/43823/1",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D58E5CF",
+      "title": "Market Share: Enterprise Resource Planning, Worldwide, 2024",
+      "publisher": "Gartner",
+      "date": "2025-05-26",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/6524002",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D5C3B76",
+      "title": "Market Share: Database Management Systems, Worldwide, 2023",
+      "publisher": "Gartner",
+      "date": "2024-05-17",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/5441963",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D5E6ADE",
+      "title": "Gartner Says Worldwide Relational Database Market Increased 8 Percent in 2005",
+      "publisher": "Gartner",
+      "date": "2006-05-24",
+      "kind": "analyst",
+      "url": "https://www.businesswire.com/news/home/20060524005618/en/Gartner-Worldwide-Relational-Database-Market-Increased-8",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D627283",
+      "title": "Market Share Analysis: Security Software, Worldwide, 2024",
+      "publisher": "Gartner",
+      "date": "2025-08-04",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/6807034",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D6427AE",
+      "title": "Relational Database Market Due for a Shakeup (Selling Power)",
+      "publisher": "Gartner",
+      "date": "2010-01-13",
+      "kind": "analyst",
+      "url": "https://www.sellingpower.com/2010/01/13/1674/relational-database-market-due-for-a-shakeup",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D6AAF9E",
+      "title": "Gartner forecasts a cloudy future for the database market (SiliconANGLE)",
+      "publisher": "Gartner",
+      "date": "2019-07-01",
+      "kind": "press",
+      "url": "https://siliconangle.com/2019/07/01/gartner-forecasts-cloudy-future-database-market/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D73F086",
+      "title": "Four Interesting Insights From Gartner 2020 CRM Market Share Update",
+      "publisher": "Gartner",
+      "date": "2021-07-09",
+      "kind": "analyst",
+      "url": "https://softwarestrategiesblog.com/2021/07/09/four-interesting-insights-from-gartner-2020-crm-market-share-update/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D76267B",
+      "title": "customer relationship management Archives - Software Strategies Blog",
+      "publisher": "Gartner",
+      "date": "2012",
+      "kind": "analyst",
+      "url": "https://softwarestrategiesblog.com/tag/customer-relationship-management/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D8202E4",
+      "title": "Global games market to reach $213.9 billion as player base hits 3.7 billion: Newzoo Report",
+      "publisher": "Newzoo",
+      "date": "2026",
+      "kind": "analyst",
+      "url": "https://www.medianews4u.com/global-games-market-to-reach-213-9-billion-as-player-base-hits-3-7-billion-newzoo-report/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D838EB5",
+      "title": "Market Share Analysis: Database Management Systems, Worldwide, 2022",
+      "publisher": "Gartner",
+      "date": "2023-06-08",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/4432699",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D8598E9",
+      "title": "Newzoo: Global Games Market To Reach $99.6 Billion In 2016 (AListDaily)",
+      "publisher": "Newzoo",
+      "date": "2016",
+      "kind": "analyst",
+      "url": "https://www.alistdaily.com/digital/newzoo-global-games-market-reaches-99-6-billion/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D89D74B",
+      "title": "Service Annual Survey: 2000",
+      "publisher": "US Census Bureau",
+      "date": "2001-12",
+      "kind": "filing",
+      "url": "https://www2.census.gov/programs-surveys/services/tables/2000/sas/sas00.pdf",
+      "verified": true,
+      "reliability": "primary"
+    },
+    {
+      "id": "D8B1436",
+      "title": "Global games revenue breached $200B in 2025",
+      "publisher": "Newzoo",
+      "date": "2025",
+      "kind": "analyst",
+      "url": "https://gamesbeat.com/global-games-revenue-breached-200b-in-2025-newzoo/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DA39F4B",
+      "title": "World electronic gaming revenues to grow 9.6% to $152.1 billion in 2019 (Reuters via Euronews)",
+      "publisher": "Newzoo",
+      "date": "2019-06-18",
+      "kind": "analyst",
+      "url": "https://www.euronews.com/2019/06/18/world-electronic-gaming-revenues-to-grow-9-point-6-percent-to-152-point-1-billion-in-2019-report",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DA3B705",
+      "title": "Gartner says CRM software market grew 12.3 percent in 2015 (IDM)",
+      "publisher": "Gartner",
+      "date": "2016-05-28",
+      "kind": "press",
+      "url": "http://idm.net.au/article/0011036-gartner-says-crm-software-market-grew-123-percent-2015",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DBD1A55",
+      "title": "Gartner Forecasts Worldwide End-User Spending on Information Security to Total $213 Billion in 2025",
+      "publisher": "Gartner",
+      "date": "2025-07-29",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-07-29-gartner-forecasts-worldwide-end-user-spending-on-information-security-to-total-213-billion-us-dollars-in-2025",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DC5FB0B",
+      "title": "Gartner Says Customer Relationship Management Software Market Grew 13.7 Percent in 2013 (reprint)",
+      "publisher": "Gartner",
+      "date": "2014-05-06",
+      "kind": "press",
+      "url": "https://workflowotg.com/gartner-says-customer-relationship-management-software-market-grew-13-7-percent-in-2013/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DC70B2D",
+      "title": "Market Share: Customer Experience and Relationship Management, Worldwide, 2024",
+      "publisher": "Gartner",
+      "date": "2025-06-11",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/6582102",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DC8FE38",
+      "title": "Information Technology Outlook 1997",
+      "publisher": "OECD (IDC data)",
+      "date": "1997",
+      "kind": "analyst",
+      "url": "https://web-archive-storage.oecd.org/aemint-web-archive-prod/web-archive/ef/ef110b408944567f5da51a6720e7dd242859136a8f2333c03b161d0f2c5f577b.pdf",
+      "verified": false,
+      "reliability": "primary"
+    },
+    {
+      "id": "DC91286",
+      "title": "Market Share Analysis: ERP Software, Worldwide, 2019",
+      "publisher": "Gartner",
+      "date": "2020-05-26",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/3985627",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DCA503B",
+      "title": "SAP Ranked No.1 in Gartner's Market Share Analysis by Revenue",
+      "publisher": "Gartner",
+      "date": "2018",
+      "kind": "analyst",
+      "url": "https://erpnews.com/sap-ranked-no-1-in-gartners-market-share-analysis-by-revenue/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DCE8813",
+      "title": "Market Share Analysis: Database Management Systems, Worldwide, 2024",
+      "publisher": "Gartner",
+      "date": "2025-06-13",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/6588602",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DCEAD92",
+      "title": "Market Share Analysis: Enterprise Software, Worldwide, 2022",
+      "publisher": "Gartner",
+      "date": "2023-10-03",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/4801931",
+      "verified": false,
+      "reliability": "primary"
+    },
+    {
+      "id": "DCEDC87",
+      "title": "Market Share Analysis: ERP Software, Worldwide, 2023",
+      "publisher": "Gartner",
+      "date": "2024-06-21",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/5525695",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DD02A4B",
+      "title": "Gartner Says Worldwide Software Market Grew 4.8 Percent in 2013 (APMdigest)",
+      "publisher": "Gartner",
+      "date": "2014-04",
+      "kind": "press",
+      "url": "https://www.apmdigest.com/gartner-says-worldwide-software-market-grew-48-percent-in-2013",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DD61B8C",
+      "title": "Total Revenue for Software Publishers, All Establishments, Employer Firms (REVEF5112ALLEST)",
+      "publisher": "US Census Bureau via FRED",
+      "date": "2024-01-31",
+      "kind": "filing",
+      "url": "https://fred.stlouisfed.org/series/REVEF5112ALLEST",
+      "verified": true,
+      "reliability": "primary"
+    },
+    {
+      "id": "DDA5D15",
+      "title": "Market Share: Security Software, Worldwide, 2017",
+      "publisher": "Gartner",
+      "date": "2018-07-24",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/3883681",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DDAEFA6",
+      "title": "Gartner Says Worldwide Operating System Software Market Grew to US$30.4 Billion in 2010 (PRWire reprint)",
+      "publisher": "Gartner",
+      "date": "2011-04-28",
+      "kind": "press",
+      "url": "https://prwire.com.au/pr/22788/gartner-says-worldwide-operating-system-software-market-grew-to-us-30-4-billion-in-2010",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DDCB13C",
+      "title": "Worldwide Customer Experience and Relationship Management Software Market Grew 15.6% in 2018: Gartner (CIOL)",
+      "publisher": "Gartner",
+      "date": "2019-06-17",
+      "kind": "press",
+      "url": "https://www.ciol.com/worldwide-customer-experience-relationship-management-software-market-grew-15-6-2018-gartner/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DE03564",
+      "title": "Gartner Says Worldwide Security Software Market Grew 4.9 Percent in 2013",
+      "publisher": "Gartner",
+      "date": "2014-06-10",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2014-06-10-gartner-says-worldwide-security-software-market-grew-5-percent-in-2013",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DE06394",
+      "title": "Gartner Says Worldwide CRM Market Grew 12.5 Percent in 2008",
+      "publisher": "Gartner",
+      "date": "2009-07-15",
+      "kind": "analyst",
+      "url": "https://insurance-canada.ca/2009/07/15/gartner-says-worldwide-crm-market-grew-12-5-percent-in-2008/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DE662D6",
+      "title": "Market Share: Security Software Worldwide 2016 (research abstract)",
+      "publisher": "Gartner",
+      "date": "2017-04-28",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/3698417",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DE9A4AF",
+      "title": "Software Industry",
+      "publisher": "Encyclopedia.com (M. Campbell-Kelly, Dictionary of American History)",
+      "date": "2003",
+      "kind": "academic",
+      "url": "https://www.encyclopedia.com/history/dictionaries-thesauruses-pictures-and-press-releases/software-industry",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DEA3C6F",
+      "title": "Market Share Analysis: ERP Software, Worldwide, 2020",
+      "publisher": "Gartner",
+      "date": "2021-04-22",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/4000842",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DEB1019",
+      "title": "Market Share Analysis: ERP Software, Worldwide, 2022",
+      "publisher": "Gartner",
+      "date": "2023-08-01",
+      "kind": "analyst",
+      "url": "https://www.gartner.com/en/documents/4591199",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DED552B",
+      "title": "Newzoo has once again revised its 2024 report - it's final now (GameDev Reports)",
+      "publisher": "Newzoo",
+      "date": "2025",
+      "kind": "analyst",
+      "url": "https://gamedevreports.substack.com/p/newzoo-has-once-again-revised-its",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DEE23E0",
+      "title": "Gartner: Microsoft #1 in Database Revenue; AWS Passes Oracle; Google Cloud Gains",
+      "publisher": "Gartner",
+      "date": "2022-04-20",
+      "kind": "analyst",
+      "url": "https://clouddb.substack.com/p/gartner-microsoft-1-in-database-revenue",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DEE7F7B",
+      "title": "Newzoo: Global Gaming Market will surpass $200B in 2022 (GameDev Reports)",
+      "publisher": "Newzoo",
+      "date": "2022",
+      "kind": "analyst",
+      "url": "https://gamedevreports.substack.com/p/newzoo-global-gaming-market-will",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DEF3D9C",
+      "title": "Information Technology Outlook 2002",
+      "publisher": "OECD",
+      "date": "2002-06",
+      "kind": "analyst",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2002/06/information-technology-outlook-2002_g1gh2563/it_outlook-2002-en.pdf",
+      "verified": false,
+      "reliability": "primary"
+    },
+    {
+      "id": "DF139E1",
+      "title": "2024: The State of Generative AI in the Enterprise",
+      "publisher": "Menlo Ventures",
+      "date": "2024-11-20",
+      "kind": "analyst",
+      "url": "https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DF4E998",
+      "title": "2020 in video games (Wikipedia)",
+      "publisher": "Newzoo",
+      "date": "2020",
+      "kind": "analyst",
+      "url": "https://en.wikipedia.org/wiki/2020_in_video_games",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DF85353",
+      "title": "Gartner CRM Market Share Update: 47% Of All CRM Systems Are SaaS-Based (Forbes)",
+      "publisher": "Gartner",
+      "date": "2015-05-22",
+      "kind": "analyst",
+      "url": "https://www.forbes.com/sites/louiscolumbus/2015/05/22/gartner-crm-market-share-update-47-of-all-crm-systems-are-saas-based-salesforce-accelerates-lead/",
+      "verified": false,
+      "reliability": "secondary"
+    },
+    {
+      "id": "DFD8159",
+      "title": "worldwide market share Archives - Software Strategies Blog",
+      "publisher": "Gartner",
+      "date": "2013",
+      "kind": "analyst",
+      "url": "https://softwarestrategiesblog.com/tag/worldwide-market-share/",
+      "verified": true,
+      "reliability": "secondary"
+    }
+  ],
+  "vendors": [
+    {
+      "id": "emc-rsa",
+      "name": "EMC (RSA)"
+    },
+    {
+      "id": "hp",
+      "name": "HP"
+    },
+    {
+      "id": "intel-mcafee",
+      "name": "Intel (McAfee)"
+    },
+    {
+      "id": "symantec",
+      "name": "Symantec"
+    },
+    {
+      "id": "trend-micro",
+      "name": "Trend Micro"
+    }
+  ]
+}
