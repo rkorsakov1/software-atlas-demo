@@ -855,7 +855,6 @@ export const CompetitiveBubble = ({
                     }}
                     onMouseEnter={() => handleHover(company.id)}
                   >
-                    <title>{company.name}</title>
                   </circle>
                   {label ? (
                     <text

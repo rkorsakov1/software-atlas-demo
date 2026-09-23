@@ -19,6 +19,7 @@ import {
   filterMarkets,
   type AtlasFilters,
 } from "@/lib/selectors";
+import { cn } from "@/lib/cn";
 import type { AtlasState, FocusRef } from "@/lib/url-state";
 
 const PANEL_ID = "explore-chart-panel";
@@ -125,18 +126,25 @@ export const ExploreRoute = (): React.ReactElement => {
           }}
         />
 
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+        <div
+          className={cn("grid gap-4", {
+            "lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]": state.pin.length > 0,
+          })}
+        >
           <YearScrubber
             year={state.year}
             minYear={state.from}
             maxYear={state.to}
             onYearChange={handleYearChange}
           />
-          <ComparisonTray
-            pinnedIds={state.pin}
-            onUnpin={handleTogglePin}
-            onClear={handleClearPins}
-          />
+          {/* Pins are added from a company's details; the tray appears once there is one. */}
+          {state.pin.length === 0 ? null : (
+            <ComparisonTray
+              pinnedIds={state.pin}
+              onUnpin={handleTogglePin}
+              onClear={handleClearPins}
+            />
+          )}
         </div>
 
         <section

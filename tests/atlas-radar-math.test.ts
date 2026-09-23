@@ -98,11 +98,11 @@ describe("emerging radar placement", () => {
     expect(horizonRingIndex("5y+")).toBe(2);
   });
 
-  it("gives every category its own sector covering the full circle", () => {
+  it("gives every radar category its own sector covering the full circle", () => {
     const infrastructure = categorySector("infrastructure");
     expect(infrastructure.index).toBe(0);
     expect(infrastructure.startAngle).toBeCloseTo(-Math.PI / 2);
-    expect(categorySector("emerging").endAngle - infrastructure.startAngle).toBeCloseTo(
+    expect(categorySector("consumer").endAngle - infrastructure.startAngle).toBeCloseTo(
       Math.PI * 2,
     );
   });

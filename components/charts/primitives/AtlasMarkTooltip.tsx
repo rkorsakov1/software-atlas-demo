@@ -1,6 +1,7 @@
 "use client";
 
 import { ConfidenceBadge } from "@/components/charts/primitives/ConfidenceBadge";
+import { shortSource } from "@/components/charts/primitives/ChartTooltip";
 import type { Confidence } from "@/data/types";
 
 export type AtlasMarkTooltipRow = {
@@ -33,15 +34,15 @@ export type AtlasMarkTooltipProps = {
   visible: boolean;
 };
 
-export const TOOLTIP_WIDTH = 288;
-/** CONTRACTS §10.3: a hover card never grows past this, it scrolls instead. */
-export const MAX_TOOLTIP_HEIGHT = 320;
-/** CONTRACTS §10.3: at most four rows, then a "+N more" line. */
-export const MAX_TOOLTIP_ROWS = 4;
+export const TOOLTIP_WIDTH = 340;
+/** Kept for callers that size around the card; the card itself never scrolls. */
+export const MAX_TOOLTIP_HEIGHT = 420;
+/** At most three rows, then a "+N more" line: the rest lives in the record. */
+export const MAX_TOOLTIP_ROWS = 3;
 
 const OFFSET = 14;
-const CHROME_HEIGHT = 92;
-const ROW_HEIGHT = 54;
+const CHROME_HEIGHT = 110;
+const ROW_HEIGHT = 70;
 
 /**
  * Keeps a hover card to four rows and reports what it left out, so the exhaustive
@@ -51,7 +52,7 @@ export const capTooltipRows = <TRow,>(
   rows: readonly TRow[],
 ): { visible: TRow[]; hiddenCount: number } => {
   if (rows.length <= MAX_TOOLTIP_ROWS) return { visible: [...rows], hiddenCount: 0 };
-  const visible = rows.slice(0, MAX_TOOLTIP_ROWS - 1);
+  const visible = rows.slice(0, MAX_TOOLTIP_ROWS);
   return { visible, hiddenCount: rows.length - visible.length };
 };
 
@@ -119,14 +120,14 @@ export const AtlasMarkTooltip = ({
   return (
     <div
       role="tooltip"
-      style={{ left, top, width: TOOLTIP_WIDTH, maxHeight: MAX_TOOLTIP_HEIGHT }}
-      className="pointer-events-none absolute z-30 flex flex-col overflow-hidden rounded-md border border-border bg-popover/98 p-3 shadow-lg backdrop-blur-sm"
+      style={{ left, top, width: TOOLTIP_WIDTH }}
+      className="pointer-events-none absolute z-30 flex flex-col rounded-lg border border-border bg-popover p-3.5 shadow-xl"
     >
-      <p className="font-serif text-sm font-semibold leading-tight text-popover-foreground">
+      <p className="text-sm font-semibold leading-snug text-popover-foreground">
         {title}
       </p>
       {subtitle ? (
-        <p className="mt-0.5 line-clamp-3 text-[11px] leading-snug text-muted-foreground">
+        <p className="mt-1 line-clamp-4 text-[13px] leading-snug text-popover-foreground">
           {subtitle}
         </p>
       ) : null}
@@ -134,7 +135,7 @@ export const AtlasMarkTooltip = ({
         <p className="mt-0.5 font-mono text-[11px] text-muted-foreground">{year}</p>
       )}
 
-      <ul className="mt-2 min-h-0 flex-1 space-y-2 overflow-y-auto">
+      <ul className="mt-2.5 space-y-2.5">
         {shownRows.map((row, index) => (
           // Index-keyed on purpose: a mark can legitimately carry two rows with the
           // same label and value (two "Leading indicator 3 / 3" signals, say), and
@@ -156,18 +157,18 @@ export const AtlasMarkTooltip = ({
               </span>
             </div>
             {row.detail ? (
-              <p className="mt-1 line-clamp-3 text-[11px] leading-snug text-popover-foreground">
+              <p className="mt-1 line-clamp-3 text-xs leading-snug text-popover-foreground">
                 {row.detail}
               </p>
             ) : null}
             {row.confidence || row.source ? (
-              <div className="mt-1 flex items-start gap-1.5">
+              <div className="mt-1 flex items-center gap-1.5">
                 {row.confidence ? (
                   <ConfidenceBadge confidence={row.confidence} note={row.note} />
                 ) : null}
                 {row.source ? (
-                  <span className="line-clamp-2 min-w-0 flex-1 text-[11px] leading-snug text-muted-foreground">
-                    {row.source}
+                  <span className="min-w-0 flex-1 truncate text-[11px] text-muted-foreground">
+                    {shortSource(row.source)}
                   </span>
                 ) : null}
               </div>
@@ -176,12 +177,12 @@ export const AtlasMarkTooltip = ({
         ))}
         {hiddenCount > 0 ? (
           <li className="text-[11px] text-muted-foreground">
-            +{hiddenCount} more — open the record or view the chart as a table
+            +{hiddenCount} more. Click to open the full record.
           </li>
         ) : null}
       </ul>
 
-      <p className="mt-2 line-clamp-3 shrink-0 border-t border-border pt-2 text-[11px] leading-snug text-muted-foreground">
+      <p className="mt-2.5 line-clamp-2 border-t border-border pt-2 text-[11px] leading-snug text-muted-foreground">
         {footnote}
       </p>
     </div>

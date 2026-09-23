@@ -81,7 +81,7 @@ const LANE_LABEL_FONT = 11;
 const ERA_BADGE_SPACE = 22;
 const ERA_LABEL_PADDING = 8;
 const BADGE_HEIGHT = 18;
-const MAX_TOOLTIP_ROWS = 4;
+const MAX_TOOLTIP_ROWS = 3;
 
 const ERA_ACCENTS: readonly string[] = [
   "var(--cat-infrastructure)",
@@ -197,7 +197,12 @@ export const EraTimeline = ({
     const end = Math.max(fromYear, toYear) + 1;
     const visible = sortedEras
       .filter((era) => era.startYear < end && (era.endYear ?? Number.POSITIVE_INFINITY) > start)
-      .map((era) => ({ id: era.id, startYear: Math.max(era.startYear, start), endYear: era.endYear }));
+      .map((era) => ({
+        id: era.id,
+        startYear: Math.max(era.startYear, start),
+        endYear: era.endYear,
+        sortYear: era.startYear,
+      }));
     return packEraRows(visible);
   }, [fromYear, sortedEras, toYear]);
   const eraRowCount = eraRows.size === 0 ? 1 : Math.max(...eraRows.values()) + 1;
@@ -478,6 +483,7 @@ export const EraTimeline = ({
       return {
         label: event.title,
         value: String(event.year),
+        detail: event.impact,
         confidence: event.dealValue?.confidence ?? "reported",
         note: event.dealValue?.note,
         source: sourceId ? sourceTitleFor(sourceId) : undefined,
@@ -490,8 +496,8 @@ export const EraTimeline = ({
     const cluster = hoveredClusterMark?.cluster;
     if (!cluster) return "";
     const hidden = cluster.events.length - MAX_TOOLTIP_ROWS;
-    const more = hidden > 0 ? ` +${hidden} more in this group.` : "";
-    return `${cluster.events.length} events pooled because their dots would overlap at this width.${more} Open the group or view the table for every one.`;
+    const more = hidden > 0 ? ` ${hidden} more inside.` : "";
+    return `Click to spread the group out.${more}`;
   }, [hoveredClusterMark]);
 
   const markCentre = useCallback(
@@ -539,9 +545,9 @@ export const EraTimeline = ({
     }
     if (activeEra) {
       const span = formatYearRange(activeEra.startYear, activeEra.endYear);
-      return `${activeEra.name} (${span}): ${activeEra.summary}`;
+      return `${activeEra.name} (${span}): ${activeEra.summary} Click to zoom to this era; click again for all years.`;
     }
-    return "Drag to pan, ctrl or cmd plus scroll to zoom. Arrow keys step through events by year; Enter opens one, or opens a pooled group of them.";
+    return "Hover a dot for the story, click it for sources. Click an era to zoom in. Drag to pan; ctrl or cmd plus scroll to zoom.";
   }, [activeEra, hoveredClusterMark, hoveredEvent]);
 
   const sourceLine = useMemo(() => {
@@ -722,7 +728,6 @@ export const EraTimeline = ({
             onBlur={handleBlurMark}
             onMouseEnter={() => handleFocusMark(mark)}
           >
-            <title>{describeCluster(cluster, mark.expanded)}</title>
           </rect>
           <text
             aria-hidden="true"
@@ -771,7 +776,6 @@ export const EraTimeline = ({
         onBlur={handleBlurMark}
         onMouseEnter={() => handleFocusMark(mark)}
       >
-        <title>{describeEvent(event)}</title>
       </circle>
     );
   };
@@ -788,7 +792,7 @@ export const EraTimeline = ({
       <div ref={containerRef} className="relative w-full">
         <p
           aria-live="polite"
-          className="mb-2 min-h-[2.5rem] text-pretty text-xs text-muted-foreground"
+          className="mb-2 line-clamp-2 h-10 text-pretty text-xs text-muted-foreground"
         >
           {readout}
         </p>
@@ -855,7 +859,6 @@ export const EraTimeline = ({
                       onMouseEnter={() => handleFocusEra(era)}
                       onMouseLeave={handleLeaveEra}
                     >
-                      <title>{`${era.name} (${span})`}</title>
                     </rect>
 
                     <rect

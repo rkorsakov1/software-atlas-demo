@@ -1,14 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
-import {
-  verificationExplanation,
-  verificationLabel,
-  verificationState,
-} from "@/components/profile/verification";
-import { shortPublisher } from "@/components/story/citations";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { verificationLabel, verificationState } from "@/components/profile/verification";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { sources } from "@/data";
 import type { Source } from "@/data/types";
 
@@ -21,64 +17,76 @@ export const isKnownSourceId = (id: string): boolean => SOURCE_BY_ID.has(id);
 /** Where the methodology page anchors each entry of the full registry. */
 export const sourceAnchorHref = (id: string): string => `/methodology/#source-${id}`;
 
-const accessibleName = (source: Source): string =>
-  `Source ${source.id}: ${source.title} — ${source.publisher}, ${source.date}. ${
-    verificationExplanation[verificationState(source)]
-  } Opens the source list on the methodology page.`;
-
-type CitationChipProps = {
-  source: Source;
-};
-
-const CitationChip = ({ source }: CitationChipProps): React.ReactElement => (
-  <Tooltip>
-    <TooltipTrigger asChild>
-      <Link
-        href={sourceAnchorHref(source.id)}
-        aria-label={accessibleName(source)}
-        className="text-[10px] font-medium text-muted-foreground no-underline transition-colors hover:text-brand"
-      >
-        {shortPublisher(source.publisher)}
-      </Link>
-    </TooltipTrigger>
-    <TooltipContent side="top" align="start" className="max-w-[300px] text-left">
-      <span className="block font-medium leading-snug">{source.title}</span>
-      <span className="mt-1 block opacity-80">
-        {source.publisher} · {source.date}
-      </span>
-      <span className="mt-1 block opacity-80">
-        {verificationLabel[verificationState(source)]} · source {source.id}
-      </span>
-    </TooltipContent>
-  </Tooltip>
-);
-
 export type SourceCitationProps = {
   ids: readonly string[];
+  /** The chapter-wide number of each id, in the same order as `ids`. */
+  numbers: readonly number[];
   /** Prose that shared the parentheses with the ids, e.g. a modelling note. */
   trailing: string | null;
 };
 
 /**
- * The reading-side form of a `(S18, S27)` citation: one chip per source, naming
- * the publisher, linking to that source in the methodology registry, and showing
- * title, publisher and date on hover **and** on keyboard focus.
+ * A citation as a footnote number. Clicking it opens a small card with each
+ * source's title, publisher, date and a link, so the prose stays uncluttered and
+ * the provenance stays one click away.
  */
-export const SourceCitation = ({ ids, trailing }: SourceCitationProps): React.ReactElement => {
+export const SourceCitation = ({
+  ids,
+  numbers,
+  trailing,
+}: SourceCitationProps): React.ReactElement => {
   const resolved = ids
     .map((id) => SOURCE_BY_ID.get(id))
     .filter((source): source is Source => source !== undefined);
 
   if (resolved.length === 0) return <></>;
 
+  const label = numbers.join(", ");
+
   return (
-    <sup className="ml-0.5 inline-flex flex-wrap gap-1 leading-none">
-      {resolved.map((source) => (
-        <CitationChip key={source.id} source={source} />
-      ))}
-      {trailing === null ? null : (
-        <span className="text-[10px] text-muted-foreground">({trailing})</span>
-      )}
-    </sup>
+    <Popover>
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          aria-label={`Sources ${label}`}
+          className="ml-0.5 cursor-pointer align-super text-[11px] font-medium leading-none text-brand hover:underline"
+        >
+          [{label}]
+        </button>
+      </PopoverTrigger>
+      <PopoverContent align="start" className="w-80 space-y-3 p-4">
+        {resolved.map((source, index) => (
+          <div key={source.id} className="space-y-1 text-sm">
+            <p className="font-medium leading-snug">
+              <span className="mr-1.5 font-mono text-xs text-muted-foreground">
+                [{numbers[index]}]
+              </span>
+              {source.title}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {source.publisher} · {source.date} · {verificationLabel[verificationState(source)]}
+            </p>
+            <div className="flex gap-3 text-xs">
+              {source.url ? (
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-brand hover:underline"
+                >
+                  Open source <ExternalLink aria-hidden="true" className="size-3" />
+                </a>
+              ) : null}
+              <Link href={sourceAnchorHref(source.id)} className="text-muted-foreground hover:underline">
+                All sources
+              </Link>
+            </div>
+          </div>
+        ))}
+        {trailing === null ? null : (
+          <p className="border-t border-border pt-2 text-xs text-muted-foreground">{trailing}</p>
+        )}
+      </PopoverContent>
+    </Popover>
   );
 };

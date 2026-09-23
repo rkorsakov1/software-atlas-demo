@@ -176,16 +176,13 @@ describe("BundlingSankey legibility", () => {
     expect(truncated?.endsWith("…")).toBe(true);
   });
 
-  it("narrows the diagram to one decade and still lists every flow in the table", () => {
+  it("merges sparse decades instead of offering near-empty periods", () => {
     render(
       <BundlingSankey input={withLoop} fromYear={2000} toYear={2025} eventTitleFor={eventTitleFor} />,
     );
 
-    fireEvent.click(screen.getByRole("radio", { name: "2020s (2)" }));
-    expect(screen.getAllByRole("button", { name: /weight \d of 3/ })).toHaveLength(2);
-
-    fireEvent.click(screen.getByRole("button", { name: /view as table/i }));
-    expect(screen.getByText("Event E20")).toBeDefined();
-    expect(screen.getAllByText(/not the shown period/).length).toBe(2);
+    // 2000s and 2010s hold one flow each, so they fold into the 2020s: one period, no tabs.
+    expect(screen.queryByRole("radio", { name: /^2000s/ })).toBeNull();
+    expect(screen.getAllByRole("button", { name: /weight \d of 3/ })).toHaveLength(4);
   });
 });

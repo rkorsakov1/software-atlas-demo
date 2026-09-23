@@ -10,7 +10,6 @@ import {
 import {
   ALL_PERIODS_ID,
   computeSankeyLayout,
-  decadeIdFor,
   defaultPeriodId,
   filterInputToPeriod,
   flowPeriods,
@@ -300,7 +299,7 @@ export const BundlingSankey = ({
       {
         key: "drawn",
         header: "In diagram",
-        render: (row) => (row.drawn ? "Yes" : `No — ${decadeIdFor(row.year)} is not the shown period`),
+        render: (row) => (row.drawn ? "Yes" : "No, outside the shown period"),
       },
     ],
     [],

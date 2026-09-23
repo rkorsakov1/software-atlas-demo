@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import { ConfidenceBadge, EmptyState } from "@/components/charts/primitives";
 import { EventTimeline } from "@/components/profile/EventTimeline";
 import { MetricsGrid, type Metric } from "@/components/profile/MetricsGrid";
+import { MoatRationaleList } from "@/components/profile/MoatRationaleList";
 import { MoatSection } from "@/components/profile/MoatSection";
 import { PinToCompare } from "@/components/profile/PinToCompare";
 import { ProfileSeries } from "@/components/profile/SeriesChart";
@@ -229,9 +230,9 @@ const CompanyPage = async ({ params }: CompanyPageProps): Promise<React.ReactEle
           </Link>
           , not measurements. The rationale below says why.
         </p>
-        <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed">
-          {company.moatRationale}
-        </p>
+        <div className="max-w-2xl">
+          <MoatRationaleList rationale={company.moatRationale} />
+        </div>
 
         <div className="mt-5 grid gap-6 lg:grid-cols-2">
           <MoatSection companyIds={[company.id]} />

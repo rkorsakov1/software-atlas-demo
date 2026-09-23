@@ -252,7 +252,13 @@ export const clusterIdByEvent = (
 export const pooledClusterCount = (clusters: readonly TimelineCluster[]): number =>
   clusters.filter((cluster) => cluster.events.length > 1).length;
 
-export type EraSpan = { id: string; startYear: number; endYear: number | null };
+export type EraSpan = {
+  id: string;
+  startYear: number;
+  endYear: number | null;
+  /** Breaks ties when spans are clipped to a range: the era's real start year. */
+  sortYear?: number;
+};
 
 /**
  * Assigns each era to the first row where it does not overlap an era already
@@ -261,7 +267,12 @@ export type EraSpan = { id: string; startYear: number; endYear: number | null };
  * in N share a boundary, not a year, so they may sit in the same row.
  */
 export const packEraRows = (eras: readonly EraSpan[]): Map<string, number> => {
-  const sorted = [...eras].sort((a, b) => a.startYear - b.startYear || a.id.localeCompare(b.id));
+  const sorted = [...eras].sort(
+    (a, b) =>
+      a.startYear - b.startYear ||
+      (a.sortYear ?? a.startYear) - (b.sortYear ?? b.startYear) ||
+      a.id.localeCompare(b.id),
+  );
   const rowEnds: number[] = [];
   const rows = new Map<string, number>();
   for (const era of sorted) {

@@ -345,22 +345,35 @@ export type FlowPeriod = {
 
 export const decadeIdFor = (year: number): string => `${Math.floor(year / 10) * 10}s`;
 
-/** The decades the flows actually fall in, ascending, each with its flow count. */
+/** A period with fewer flows than this reads as empty, so it is merged forward. */
+export const MIN_FLOWS_PER_PERIOD = 3;
+
+/**
+ * Decades, except that a decade with fewer than `MIN_FLOWS_PER_PERIOD` flows is
+ * merged into the next one ("1990s–2000s"), so no tab opens a near-empty diagram.
+ */
 export const flowPeriods = (links: readonly { year: number }[]): FlowPeriod[] => {
   const counts = new Map<number, number>();
   for (const link of links) {
     const decade = Math.floor(link.year / 10) * 10;
     counts.set(decade, (counts.get(decade) ?? 0) + 1);
   }
-  return [...counts.entries()]
-    .sort((a, b) => a[0] - b[0])
-    .map(([decade, count]) => ({
-      id: `${decade}s`,
-      label: `${decade}s`,
-      fromYear: decade,
-      toYear: decade + 9,
-      count,
-    }));
+  const decades = [...counts.entries()].sort((a, b) => a[0] - b[0]);
+  const periods: FlowPeriod[] = [];
+  let pending: { from: number; count: number } | null = null;
+  decades.forEach(([decade, count], index) => {
+    const from = pending?.from ?? decade;
+    const total = (pending?.count ?? 0) + count;
+    const isLast = index === decades.length - 1;
+    if (total < MIN_FLOWS_PER_PERIOD && !isLast) {
+      pending = { from, count: total };
+      return;
+    }
+    pending = null;
+    const label = from === decade ? `${decade}s` : `${from}s–${decade}s`;
+    periods.push({ id: label, label, fromYear: from, toYear: decade + 9, count: total });
+  });
+  return periods;
 };
 
 /**
@@ -378,9 +391,18 @@ export const defaultPeriodId = (
 };
 
 /** Narrows the input to one decade, dropping nodes that lose all their links. */
+/** True when `year` falls in a period id such as "2010s" or "1990s–2000s". */
+export const yearInPeriod = (year: number, periodId: string): boolean => {
+  const match = /^(\d{4})s(?:–(\d{4})s)?$/.exec(periodId);
+  if (!match) return false;
+  const from = Number(match[1]);
+  const to = Number(match[2] ?? match[1]) + 9;
+  return year >= from && year <= to;
+};
+
 export const filterInputToPeriod = (input: SankeyInput, periodId: string): SankeyInput => {
   if (periodId === ALL_PERIODS_ID) return input;
-  const links = input.links.filter((link) => decadeIdFor(link.year) === periodId);
+  const links = input.links.filter((link) => yearInPeriod(link.year, periodId));
   if (links.length === 0) return { nodes: [], links: [] };
   const used = new Set<string>();
   for (const link of links) {

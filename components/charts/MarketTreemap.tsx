@@ -728,7 +728,6 @@ export const MarketTreemap = ({
           onMouseEnter={() => handleFocusLeaf(leaf)}
           onMouseLeave={handleLeaveLeaf}
         >
-          <title>{name}</title>
         </rect>
 
         {nameFit ? (
@@ -736,7 +735,7 @@ export const MarketTreemap = ({
             aria-hidden="true"
             x={TILE_PADDING}
             y={nameY}
-            className="pointer-events-none fill-foreground text-[12px] font-medium"
+            className="pointer-events-none fill-foreground stroke-card text-[12px] font-medium [paint-order:stroke] [stroke-linejoin:round] [stroke-width:4px]"
           >
             {nameFit.text}
           </text>
@@ -747,7 +746,7 @@ export const MarketTreemap = ({
             aria-hidden="true"
             x={TILE_PADDING}
             y={VALUE_BASELINE}
-            className="pointer-events-none fill-muted-foreground font-mono text-[11px]"
+            className="pointer-events-none fill-muted-foreground stroke-card font-mono text-[11px] [paint-order:stroke] [stroke-linejoin:round] [stroke-width:4px]"
           >
             {valueFit.text}
           </text>

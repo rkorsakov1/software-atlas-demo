@@ -127,11 +127,14 @@ export const StoryRoute = (): React.ReactElement => {
             "lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto": overflows,
           })}
         >
-          <div style={scale < 1 ? { height: height * scale } : undefined}>
+          <div className="overflow-hidden" style={scale < 1 ? { height: height * scale } : undefined}>
             <div
               ref={measureRef}
               className="flex min-w-0 origin-top-left flex-col gap-3"
-              style={scale < 1 ? { transform: `scale(${scale})` } : undefined}
+              // Widened by 1/scale so that, once shrunk, the graphic still fills the column.
+              style={
+                scale < 1 ? { transform: `scale(${scale})`, width: `${100 / scale}%` } : undefined
+              }
             >
               <div className="flex items-baseline justify-between gap-3">
                 <p className="min-w-0 truncate font-mono text-xs uppercase tracking-widest text-muted-foreground">

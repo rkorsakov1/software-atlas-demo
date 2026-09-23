@@ -155,7 +155,7 @@ describe("CompetitiveBubble", () => {
       .getAllByRole("button", { name: /revenue \$/ })
       .find((node) => node.getAttribute("aria-label")?.startsWith("SAP"));
     expect(sap).toBeDefined();
-    expect(sap?.querySelector("title")?.textContent).toBe("SAP");
+    expect(sap?.getAttribute("aria-label")).toContain("SAP");
   });
 
   it("never offers market cap when the dataset cannot back it, and says why", () => {

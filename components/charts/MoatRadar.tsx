@@ -26,7 +26,7 @@ import { useKeyboardNav } from "@/components/charts/primitives/useKeyboardNav";
 import { useNarrowViewport } from "@/components/charts/primitives/useNarrowViewport";
 import type { MoatKey, MoatRubric, MoatScore } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { moatLabel } from "@/lib/format";
+import { moatLabel, splitMoatRationale } from "@/lib/format";
 
 export type MoatRadarCompany = {
   id: string;
@@ -468,7 +468,10 @@ export const MoatRadar = ({
                 containerHeight={size.height}
                 title={activeVertex.companyName}
                 subtitle={
-                  companies.find((company) => company.id === activeVertex.companyId)?.moatRationale
+                  splitMoatRationale(
+                    companies.find((company) => company.id === activeVertex.companyId)
+                      ?.moatRationale ?? "",
+                  ).find((line) => line.label.toLowerCase() === activeVertex.moatKey)?.text
                 }
                 rows={[
                   {

@@ -163,10 +163,14 @@ describe("LineageGraph", () => {
       />,
     );
 
-    const nodeTitles = [...container.querySelectorAll("circle > title")].map(
-      (node) => node.textContent,
+    // Names live in each node's aria-label (and the tooltip), not a native <title>
+    // that would pop a browser label over the Atlas tooltip.
+    const nodeLabels = [...container.querySelectorAll("circle[aria-label]")].map(
+      (node) => node.getAttribute("aria-label") ?? "",
     );
-    for (const node of graph.nodes) expect(nodeTitles).toContain(node.name);
+    for (const node of graph.nodes) {
+      expect(nodeLabels.some((label) => label.includes(node.name))).toBe(true);
+    }
 
     // Below the degree floor no caption is drawn at all, so the SVG must not be
     // carrying company names as loose text — the tooltip and table hold them.

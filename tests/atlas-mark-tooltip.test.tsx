@@ -3,7 +3,6 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import {
   AtlasMarkTooltip,
-  MAX_TOOLTIP_HEIGHT,
   MAX_TOOLTIP_ROWS,
   TOOLTIP_WIDTH,
   capTooltipRows,
@@ -30,9 +29,9 @@ describe("capTooltipRows", () => {
 
   it("never renders more than four lines, counting the overflow line", () => {
     const capped = capTooltipRows(rowsOf(9));
-    expect(capped.visible).toHaveLength(MAX_TOOLTIP_ROWS - 1);
+    expect(capped.visible).toHaveLength(MAX_TOOLTIP_ROWS);
     expect(capped.hiddenCount).toBe(6);
-    expect(capped.visible.length + 1).toBeLessThanOrEqual(MAX_TOOLTIP_ROWS);
+    expect(capped.visible.length + 1).toBeLessThanOrEqual(4);
   });
 });
 
@@ -82,12 +81,12 @@ describe("AtlasMarkTooltip", () => {
       />,
     );
 
-    expect(screen.getAllByText("3 / 3")).toHaveLength(MAX_TOOLTIP_ROWS - 1);
+    expect(screen.getAllByText("3 / 3")).toHaveLength(MAX_TOOLTIP_ROWS);
     expect(screen.getByText(/\+4 more/)).toBeDefined();
     expect(screen.queryByText("Signal 7")).toBeNull();
   });
 
-  it("is bounded in width and height so it cannot swallow the chart", () => {
+  it("has a fixed width and never scrolls", () => {
     render(
       <AtlasMarkTooltip
         x={20}
@@ -103,8 +102,8 @@ describe("AtlasMarkTooltip", () => {
 
     const card = screen.getByRole("tooltip");
     expect(card.style.width).toBe(`${TOOLTIP_WIDTH}px`);
-    expect(card.style.maxHeight).toBe(`${MAX_TOOLTIP_HEIGHT}px`);
-    expect(TOOLTIP_WIDTH).toBeLessThanOrEqual(300);
-    expect(MAX_TOOLTIP_HEIGHT).toBeLessThanOrEqual(320);
+    expect(card.style.maxHeight).toBe("");
+    expect(card.className).not.toContain("overflow-y-auto");
+    expect(TOOLTIP_WIDTH).toBeLessThanOrEqual(360);
   });
 });

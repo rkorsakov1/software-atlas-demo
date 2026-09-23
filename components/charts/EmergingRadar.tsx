@@ -6,6 +6,7 @@ import { AtlasMarkTooltip } from "@/components/charts/primitives/AtlasMarkToolti
 import { fitLabel } from "@/components/charts/primitives/atlasLabelFit";
 import {
   HORIZON_RINGS,
+  RADAR_CATEGORIES,
   RING_LABEL_ANGLE,
   type EmergingDot,
   type RadarGeometry,
@@ -269,7 +270,7 @@ export const EmergingRadar = ({
   );
 
   const toolbar = (
-    <>
+    <div className="flex w-full flex-col gap-2">
       <Legend items={legendItems} title="Sector" />
       <span className="flex items-center gap-1.5">
         <ConfidenceBadge confidence="modeled" note={STRENGTH_NOTE} />
@@ -277,7 +278,7 @@ export const EmergingRadar = ({
           Rings outward: {HORIZON_RINGS.map((horizon) => horizonLabel[horizon]).join(" · ")}
         </span>
       </span>
-    </>
+    </div>
   );
 
   return (
@@ -319,7 +320,7 @@ export const EmergingRadar = ({
                     opacity={index === HORIZON_RINGS.length - 1 ? 1 : 0.55}
                   />
                 ))}
-                {CATEGORY_ORDER.map((category) => {
+                {RADAR_CATEGORIES.map((category) => {
                   const start = polarPoint(
                     geometry,
                     geometry.radius,
@@ -342,7 +343,7 @@ export const EmergingRadar = ({
 
               {narrow
                 ? null
-                : CATEGORY_ORDER.map((category) => {
+                : RADAR_CATEGORIES.map((category) => {
                     const sector = categorySector(category);
                     const point = sectorLabelPoint(category, geometry, SECTOR_LABEL_OFFSET);
                     const anchor = radarTextAnchor(
@@ -414,7 +415,6 @@ export const EmergingRadar = ({
                       onBlur={() => setFocusedId(null)}
                       onMouseEnter={() => setHoveredId(dot.id)}
                     >
-                      <title>{dot.market.name}</title>
                     </circle>
                   </g>
                 );

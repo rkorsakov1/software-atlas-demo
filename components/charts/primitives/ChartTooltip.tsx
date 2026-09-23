@@ -2,7 +2,6 @@
 
 import { ConfidenceBadge } from "@/components/charts/primitives/ConfidenceBadge";
 import type { Confidence, Unit } from "@/data/types";
-import { cn } from "@/lib/cn";
 import { formatValue } from "@/lib/format";
 
 export type TooltipRow = {
@@ -31,11 +30,18 @@ export type ChartTooltipProps = {
   visible: boolean;
 };
 
-const TOOLTIP_WIDTH = 268;
+const TOOLTIP_WIDTH = 320;
 const OFFSET = 14;
-/** §10.3: a tooltip may never grow tall enough to swallow the chart it describes. */
-const MAX_HEIGHT = 320;
 const MAX_ROWS = 4;
+
+/**
+ * Source titles are stored as "Title — Publisher". A hover card only has room
+ * for who said it; the full citation is one click away in the record.
+ */
+export const shortSource = (source: string): string => {
+  const parts = source.split(" — ");
+  return (parts[parts.length - 1] ?? source).trim();
+};
 const EDGE_PADDING = 4;
 
 /**
@@ -69,25 +75,25 @@ export const ChartTooltip = ({
     Math.min(rawLeft, containerWidth - TOOLTIP_WIDTH - EDGE_PADDING),
   );
 
-  const estimatedHeight = Math.min(
-    MAX_HEIGHT,
-    58 + shownRows.length * 44 + (footnote ? 26 : 0) + (hiddenRows > 0 ? 18 : 0),
-  );
+  const estimatedHeight =
+    58 + shownRows.length * 40 + (footnote ? 76 : 0) + (hiddenRows > 0 ? 18 : 0);
   const flipY = y + OFFSET + estimatedHeight > containerHeight;
   const top = Math.max(EDGE_PADDING, flipY ? y - OFFSET - estimatedHeight : y + OFFSET);
 
   return (
     <div
       role="tooltip"
-      style={{ left, top, width: TOOLTIP_WIDTH, maxHeight: MAX_HEIGHT }}
-      className={cn(
-        "pointer-events-none absolute z-30 overflow-y-auto rounded-md border border-border bg-popover/98 p-3 shadow-lg backdrop-blur-sm",
-      )}
+      style={{ left, top, width: TOOLTIP_WIDTH }}
+      className="pointer-events-none absolute z-30 rounded-lg border border-border bg-popover p-3.5 shadow-xl"
     >
-      <p className="font-serif text-[13px] font-semibold leading-tight text-popover-foreground">
-        {title}
-      </p>
+      <p className="text-sm font-semibold leading-snug text-popover-foreground">{title}</p>
       <p className="mt-0.5 font-mono text-[11px] text-muted-foreground">{year}</p>
+
+      {footnote ? (
+        <p className="mt-2 line-clamp-4 text-[13px] leading-snug text-popover-foreground">
+          {footnote}
+        </p>
+      ) : null}
 
       <ul className="mt-2 space-y-2">
         {shownRows.map((row, index) => (
@@ -116,10 +122,10 @@ export const ChartTooltip = ({
                 {formatValue(row.high, row.unit)}
               </p>
             ) : null}
-            <div className="mt-1 flex items-start gap-1.5">
+            <div className="mt-1 flex items-center gap-1.5">
               <ConfidenceBadge confidence={row.confidence} note={row.note} />
-              <span className="min-w-0 flex-1 text-[11px] leading-snug text-muted-foreground">
-                {row.source}
+              <span className="min-w-0 flex-1 truncate text-[11px] text-muted-foreground">
+                {shortSource(row.source)}
               </span>
             </div>
           </li>
@@ -132,11 +138,6 @@ export const ChartTooltip = ({
         </p>
       ) : null}
 
-      {footnote ? (
-        <p className="mt-2 line-clamp-3 border-t border-border pt-2 text-[11px] leading-snug text-muted-foreground">
-          {footnote}
-        </p>
-      ) : null}
     </div>
   );
 };

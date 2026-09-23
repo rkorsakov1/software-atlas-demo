@@ -5,6 +5,7 @@ import { Pin, PinOff } from "lucide-react";
 
 import { ConfidenceBadge, EmptyState } from "@/components/charts/primitives";
 import { EmergingDetail } from "@/components/explore/EmergingDetail";
+import { MoatRationaleList } from "@/components/profile/MoatRationaleList";
 import { SourceList } from "@/components/profile/SourceList";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -143,7 +144,7 @@ export const DetailDrawer = ({
     <Sheet open={focus !== null} onOpenChange={handleOpenChange}>
       <SheetContent
         side="right"
-        className="w-full overflow-y-auto sm:max-w-xl"
+        className="w-full overflow-y-auto pt-4 sm:max-w-xl"
         onCloseAutoFocus={handleCloseAutoFocus}
       >
         {resolved === null ? (
@@ -253,7 +254,7 @@ const CompanyDetail = ({
               </li>
             ))}
           </ul>
-          <p className="mt-2 text-pretty text-sm leading-relaxed">{company.moatRationale}</p>
+          <MoatRationaleList rationale={company.moatRationale} />
         </section>
 
         {memberMarkets.length === 0 ? null : (

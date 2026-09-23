@@ -650,7 +650,6 @@ export const LineageGraph = (props: LineageGraphProps): React.ReactElement => {
                     onBlur={() => handleHoverCompany(null)}
                     onMouseEnter={() => handleHoverCompany(node.id)}
                   >
-                    <title>{node.name}</title>
                   </circle>
                   {label ? (
                     <text

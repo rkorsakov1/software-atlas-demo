@@ -9,6 +9,7 @@ import {
   decadeIdFor,
   defaultPeriodId,
   filterInputToPeriod,
+  yearInPeriod,
   flowPeriods,
   labelledNodeIds,
   sankeyColumnCounts,
@@ -149,17 +150,28 @@ describe("labelledNodeIds", () => {
 describe("period bucketing", () => {
   it("buckets flows into the decades they happened in", () => {
     expect(decadeIdFor(2013)).toBe("2010s");
+    // One flow per decade is too sparse to draw alone, so they merge into one period.
     expect(flowPeriods(input.links)).toEqual([
-      { id: "2000s", label: "2000s", fromYear: 2000, toYear: 2009, count: 1 },
-      { id: "2010s", label: "2010s", fromYear: 2010, toYear: 2019, count: 1 },
-      { id: "2020s", label: "2020s", fromYear: 2020, toYear: 2029, count: 1 },
+      { id: "2000s–2020s", label: "2000s–2020s", fromYear: 2000, toYear: 2029, count: 3 },
     ]);
+    const years = [1991, 1995, 2001, 2003, 2005, 2011, 2012, 2013].map((year) => ({ year }));
+    expect(flowPeriods(years).map((period) => `${period.id}:${period.count}`)).toEqual([
+      "1990s–2000s:5",
+      "2010s:3",
+    ]);
+    expect(yearInPeriod(1995, "1990s–2000s")).toBe(true);
+    expect(yearInPeriod(2010, "1990s–2000s")).toBe(false);
   });
 
   it("opens on everything when everything is legible, and on the last decade when it is not", () => {
     const periods = flowPeriods(input.links);
     expect(defaultPeriodId(periods, 12)).toBe(ALL_PERIODS_ID);
-    expect(defaultPeriodId(periods, 30)).toBe("2020s");
+    // A single merged period has nothing to narrow to.
+    expect(defaultPeriodId(periods, 30)).toBe(ALL_PERIODS_ID);
+    const spread = flowPeriods(
+      [1991, 1995, 2001, 2003, 2005, 2011, 2012, 2013].map((year) => ({ year })),
+    );
+    expect(defaultPeriodId(spread, 30)).toBe("2010s");
     expect(defaultPeriodId([], 99)).toBe(ALL_PERIODS_ID);
   });
 

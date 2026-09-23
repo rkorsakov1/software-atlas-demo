@@ -176,3 +176,22 @@ export const humanizeId = (id: string): string => {
   if (spaced.length === 0) return id;
   return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 };
+
+export type MoatRationaleLine = { label: string; score: number; text: string };
+
+const MOAT_RATIONALE_PATTERN =
+  /(Network|Switching|Scale|Data|Brand|Ecosystem|Regulatory) (\d): ([\s\S]*?)(?=\s(?:Network|Switching|Scale|Data|Brand|Ecosystem|Regulatory) \d:|$)/g;
+
+/**
+ * Splits a company's moat rationale ("Network 1: … Switching 4: …") into one
+ * line per moat. Text that doesn't follow the pattern comes back as one line.
+ */
+export const splitMoatRationale = (rationale: string): MoatRationaleLine[] => {
+  const lines = [...rationale.matchAll(MOAT_RATIONALE_PATTERN)].map((match) => ({
+    label: match[1] ?? "",
+    score: Number(match[2]),
+    text: (match[3] ?? "").trim(),
+  }));
+  if (lines.length > 0) return lines;
+  return [{ label: "", score: 0, text: rationale }];
+};

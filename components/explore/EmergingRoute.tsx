@@ -192,7 +192,7 @@ export const EmergingRoute = (): React.ReactElement => {
                         {horizonLabel[market.horizon]} · {maturityLabel[market.stage]}
                       </span>
                     </div>
-                    <p className="mt-1 line-clamp-2 text-pretty text-sm text-muted-foreground">
+                    <p className="mt-1 text-pretty text-sm text-muted-foreground">
                       {market.thesis}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-1.5">

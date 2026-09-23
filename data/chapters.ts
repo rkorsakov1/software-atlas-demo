@@ -41,7 +41,7 @@ export const chapters: StoryChapter[] = [
       "[F] Commercial software has gone through eleven eras, each built on a new technology and a new way of charging: licences for minicomputers, boxed retail for PCs, big licences plus maintenance for client-server, subscriptions for SaaS, metered usage for cloud, per-token pricing for AI models.",
       "[I] The losers of each shift fail the same way. Lotus and WordPerfect were late to Windows. Netscape had the better browser but no distribution. Nokia and BlackBerry owned the phone, not the platform.",
       "[A] The survivors did one of three things. They owned a layer the new platform still needed: Oracle's database, Microsoft's identity, Adobe's PDF. They disrupted themselves first: Office went subscription in 2011 (S70), Creative Suite was retired in 2013 (S66). Or they bought the challenger at a price that looked absurd: GitHub for $7.5B (S50), LinkedIn for $26.2B (S46), Wiz for $32B (S20).",
-      "[A] The AI era has no casualties yet. In February 2026 investors priced them in anyway (S18, S27). That is a bet, not an outcome.",
+      "[A] The AI era has no casualties yet. In February 2026 investors priced them in anyway (S18, S27).",
     ],
     graphic: "timeline",
     graphicState: { mode: "story", chart: "timeline", from: 1950, to: 2026, year: 2026 },
@@ -92,7 +92,7 @@ export const chapters: StoryChapter[] = [
     body: [
       "[F] Software costs almost nothing to copy. Adobe's fiscal 2025 revenue was $23.77B against $2.55B in cost of revenue, a gross margin of about 89% (S14, modeled as 1 minus 2.55 divided by 23.77). Atlassian grew 26% with a 20% free-cash-flow margin (S15).",
       "[I] Three forces compound that. Existing customers spend more each year, so revenue grows without new sales. Network, data and ecosystem effects make the most-used product the most valuable. And switching costs keep ERP, databases and health records in place for decades.",
-      "[A] The radar scores each company 0–5 on seven moats. These are judgements against a published rubric, so you can argue with a specific score.",
+      "[A] The radar scores each company 0–5 on seven moats against a published rubric, so you can argue with a specific score. Compare like with like: the tabs group incumbents that compete for the same buyers.",
       "[A] What's new: AI inference costs real money for every query. If it pushes costs up, software's margin advantage shrinks. Public evidence on AI unit economics is still thin and mostly leaked (S16b).",
     ],
     graphic: "moat",
@@ -100,7 +100,7 @@ export const chapters: StoryChapter[] = [
       mode: "story",
       chart: "moat",
       year: 2026,
-      pin: ["microsoft", "salesforce", "anthropic"],
+      pin: ["amazon", "microsoft", "google"],
     },
   },
   {
@@ -110,7 +110,7 @@ export const chapters: StoryChapter[] = [
     kicker: "Cloud infrastructure, 2017–2026",
     body: [
       "[F] Cloud is the one market with published share data. In mid-2017 AWS held 34% and Microsoft 11% (S04). By mid-2026 AWS was at 28%, Microsoft 20% and Google 15% (S03). Microsoft passed 20% in 2021 (S06), peaked at 23% in late 2022 (S96) and has held 20–21% since (S97, S98).",
-      "[A] The answer depends on how you measure it. The top three went from about half the market to two thirds. But HHI, the standard concentration index, peaked in 2022 and fell, because AWS lost share to its two nearest rivals rather than to small players. More oligopoly, less dominance.",
+      "[A] Whether cloud is concentrating depends on how you measure it. The top three went from about half the market to two thirds. But HHI, the standard concentration index, peaked in 2022 and fell, because AWS lost share to its two nearest rivals rather than to small players. More oligopoly, less dominance.",
       "[I] Our HHI is computed from published shares, treating the unreported rest as fragmented, so it's a lower bound. The 2023 US merger guidelines put the line for a concentrated market at 1,800 (B09).",
       "[A] For most other markets, share data sits behind paywalls. Where a publisher has released vendor shares (CRM, databases, security, operating systems, ERP, AI model APIs), the Explore view shows them, gaps included.",
     ],

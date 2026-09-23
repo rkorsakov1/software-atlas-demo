@@ -28,7 +28,6 @@ import {
   bubbleData,
   byId,
   filterEmerging,
-  hasShareData,
   lineageGraph,
   sankeyInput,
   shareSeries,
@@ -37,9 +36,32 @@ import {
   unsizedMarkets,
   type BubbleSizeMetric,
 } from "@/lib/selectors";
-import type { AtlasState } from "@/lib/url-state";
+import { ATLAS_MAX_YEAR, ATLAS_MIN_YEAR, type AtlasState } from "@/lib/url-state";
 
 const chartSkeleton = (): React.ReactElement => <Skeleton className="h-[520px] w-full" />;
+
+type MoatPreset = { id: string; label: string; ids: readonly string[] };
+
+const revenueInBillions = (company: Company): number => {
+  const latest = [...company.revenueByYear].sort((a, b) => b.year - a.year)[0];
+  if (!latest) return 0;
+  return latest.unit === "USD_M" ? latest.value / 1000 : latest.value;
+};
+
+/** Incumbents that compete for the same buyers, plus the three largest by revenue. */
+const MOAT_PRESETS: readonly MoatPreset[] = [
+  { id: "cloud", label: "Cloud", ids: ["amazon", "microsoft", "google"] },
+  { id: "enterprise", label: "Enterprise apps", ids: ["salesforce", "sap", "oracle"] },
+  { id: "ai-labs", label: "AI labs", ids: ["openai", "anthropic", "google"] },
+  {
+    id: "largest",
+    label: "Largest by revenue",
+    ids: [...companies]
+      .sort((a, b) => revenueInBillions(b) - revenueInBillions(a))
+      .slice(0, 3)
+      .map((company) => company.id),
+  },
+];
 
 const EraTimeline = dynamic(
   () => import("@/components/charts/EraTimeline").then((module) => module.EraTimeline),
@@ -153,10 +175,17 @@ export const ExplorePanel = ({
   );
 
   if (state.chart === "timeline") {
+    // Clicking an era zooms the range to it; clicking the same era again restores
+    // every year, so a reader can never get stuck inside one era.
     const handleSelectEra = (eraId: string): void => {
       const era = byId(eras, eraId);
       if (!era) return;
-      onStateChange({ from: era.startYear, to: era.endYear ?? state.to });
+      const eraTo = era.endYear ?? ATLAS_MAX_YEAR;
+      if (state.from === era.startYear && state.to === eraTo) {
+        onStateChange({ from: ATLAS_MIN_YEAR, to: ATLAS_MAX_YEAR });
+        return;
+      }
+      onStateChange({ from: era.startYear, to: eraTo });
     };
 
     return (
@@ -252,6 +281,27 @@ export const ExplorePanel = ({
   }
 
   if (state.chart === "moat") {
+    const handlePreset = (ids: readonly string[]): void => onStateChange({ pin: [...ids] });
+    const activePreset = MOAT_PRESETS.find(
+      (preset) => preset.ids.join(",") === state.pin.join(","),
+    );
+    const presetBar = (
+      <div role="group" aria-label="Compare" className="mb-3 flex flex-wrap gap-1.5">
+        {MOAT_PRESETS.map((preset) => (
+          <Button
+            key={preset.id}
+            type="button"
+            size="sm"
+            variant={preset.id === activePreset?.id ? "default" : "outline"}
+            aria-pressed={preset.id === activePreset?.id}
+            onClick={() => handlePreset(preset.ids)}
+          >
+            {preset.label}
+          </Button>
+        ))}
+      </div>
+    );
+
     const pinnedCompanies = state.pin
       .map((id) => byId(companies, id))
       .filter((company): company is Company => company !== undefined)
@@ -264,21 +314,27 @@ export const ExplorePanel = ({
 
     if (pinnedCompanies.length === 0) {
       return (
-        <EmptyState
-          title="Pin a company to compare moats"
-          description="The moat radar overlays up to three companies. Pin them from the revenue chart, the search dialog or any company profile, and they will appear here — the pins travel in the URL."
-        />
+        <div>
+          {presetBar}
+          <EmptyState
+            title="Pick a comparison"
+            description="Choose a group above, or pin up to three companies from their details."
+          />
+        </div>
       );
     }
 
     return (
-      <MoatRadar
-        companies={pinnedCompanies}
-        rubric={moatRubric}
-        onRemoveCompany={onTogglePin}
-        highlightedCompanyId={highlightedCompanyId}
-        onHoverCompany={handleHoverCompany}
-      />
+      <div>
+        {presetBar}
+        <MoatRadar
+          companies={pinnedCompanies}
+          rubric={moatRubric}
+          onRemoveCompany={onTogglePin}
+          highlightedCompanyId={highlightedCompanyId}
+          onHoverCompany={handleHoverCompany}
+        />
+      </div>
     );
   }
 
@@ -286,6 +342,16 @@ export const ExplorePanel = ({
     <EmergingPanel state={state} onOpenDetail={onOpenDetail} sourceTitleFor={sourceTitleFor} />
   );
 };
+
+/** Fewer share years than this is a snapshot, not a trend, so the market isn't offered. */
+const MIN_SHARE_YEARS = 3;
+
+type SizeView = "industry" | "markets";
+
+const SIZE_VIEWS: readonly { id: SizeView; label: string }[] = [
+  { id: "markets", label: "By market" },
+  { id: "industry", label: "Whole industry, 1970–today" },
+];
 
 type TreemapPanelProps = {
   filteredMarkets: readonly Market[];
@@ -310,6 +376,9 @@ const TreemapPanel = ({
   highlightedMarketId,
   onHoverMarket,
 }: TreemapPanelProps): React.ReactElement => {
+  const [sizeView, setSizeView] = useState<SizeView>(
+    state.mode === "story" ? "industry" : "markets",
+  );
   const sized = useMemo(
     () => sizedMarketsAtYear(filteredMarkets, state.year),
     [filteredMarkets, state.year],
@@ -320,27 +389,45 @@ const TreemapPanel = ({
   );
 
   return (
-    <div className="space-y-4">
-      <IndustrySizeChart
-        points={industrySize}
-        year={state.year}
-        onYearChange={onYearChange}
-        sourceTitleFor={sourceTitleFor}
-      />
-      <MarketTreemap
-        sized={sized}
-        unsized={unsized}
-        year={state.year}
-        minYear={state.from}
-        maxYear={state.to}
-        colorBy={colorBy}
-        onColorByChange={onColorByChange}
-        onYearChange={onYearChange}
-        onSelectMarket={onSelectMarket}
-        sourceTitleFor={sourceTitleFor}
-        highlightedMarketId={highlightedMarketId}
-        onHoverMarket={onHoverMarket}
-      />
+    <div className="space-y-3">
+      <div role="tablist" aria-label="Size view" className="flex gap-1.5">
+        {SIZE_VIEWS.map((view) => (
+          <Button
+            key={view.id}
+            type="button"
+            size="sm"
+            role="tab"
+            aria-selected={view.id === sizeView}
+            variant={view.id === sizeView ? "default" : "outline"}
+            onClick={() => setSizeView(view.id)}
+          >
+            {view.label}
+          </Button>
+        ))}
+      </div>
+      {sizeView === "industry" ? (
+        <IndustrySizeChart
+          points={industrySize}
+          year={state.year}
+          onYearChange={onYearChange}
+          sourceTitleFor={sourceTitleFor}
+        />
+      ) : (
+        <MarketTreemap
+          sized={sized}
+          unsized={unsized}
+          year={state.year}
+          minYear={state.from}
+          maxYear={state.to}
+          colorBy={colorBy}
+          onColorByChange={onColorByChange}
+          onYearChange={onYearChange}
+          onSelectMarket={onSelectMarket}
+          sourceTitleFor={sourceTitleFor}
+          highlightedMarketId={highlightedMarketId}
+          onHoverMarket={onHoverMarket}
+        />
+      )}
     </div>
   );
 };
@@ -362,12 +449,16 @@ const SharePanel = ({
   highlightedCompanyId,
   onHoverCompany,
 }: SharePanelProps): React.ReactElement => {
-  const sharedMarkets = useMemo(() => markets.filter(hasShareData), []);
+  // Two readings are not a trend: markets need three years of shares to be offered.
+  const sharedMarkets = useMemo(
+    () => markets.filter((candidate) => candidate.sharesByYear.length >= MIN_SHARE_YEARS),
+    [],
+  );
   const focusedMarket = state.focus?.kind === "market" ? byId(markets, state.focus.id) : undefined;
   // A focused market without share data would only open an empty chart, so the
   // view falls back to the first market that has a series.
   const market =
-    focusedMarket !== undefined && hasShareData(focusedMarket) ? focusedMarket : sharedMarkets[0];
+    focusedMarket !== undefined && focusedMarket.sharesByYear.length >= MIN_SHARE_YEARS ? focusedMarket : sharedMarkets[0];
 
   const series = useMemo(() => (market ? shareSeries(market) : []), [market]);
 

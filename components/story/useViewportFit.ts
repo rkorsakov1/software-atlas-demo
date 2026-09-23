@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+/**
+ * Height changes smaller than this are ignored. Hovering a mark can change a line
+ * of text; rescaling for it would move the mark away from the cursor and loop.
+ */
+const HEIGHT_TOLERANCE_PX = 48;
 
 /** Below this a chart is too small to read, so the panel scrolls instead. */
 export const MIN_FIT_SCALE = 0.6;
@@ -31,6 +37,8 @@ export const useViewportFit = (reservedPx: number): UseViewportFitResult => {
     overflows: false,
   });
   const [node, setNode] = useState<HTMLElement | null>(null);
+  const lastHeightRef = useRef<number>(0);
+  const lastViewportRef = useRef<number>(0);
 
   const measureRef = useCallback((element: HTMLElement | null): void => {
     setNode(element);
@@ -42,7 +50,12 @@ export const useViewportFit = (reservedPx: number): UseViewportFitResult => {
 
     const evaluate = (): void => {
       const height = node.offsetHeight;
-      const available = window.innerHeight - reservedPx;
+      const viewport = window.innerHeight;
+      const sameViewport = viewport === lastViewportRef.current;
+      if (sameViewport && Math.abs(height - lastHeightRef.current) < HEIGHT_TOLERANCE_PX) return;
+      lastHeightRef.current = height;
+      lastViewportRef.current = viewport;
+      const available = viewport - reservedPx;
       if (height <= 0 || height <= available) {
         setFit({ scale: 1, height, overflows: false });
         return;

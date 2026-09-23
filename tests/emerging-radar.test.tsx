@@ -86,7 +86,7 @@ describe("EmergingRadar hover card", () => {
     sourceIds: ["S01"],
   }));
 
-  it("summarises the case in four lines instead of covering the radar with it", () => {
+  it("summarises the case in three rows instead of covering the radar with it", () => {
     render(
       <EmergingRadar
         markets={[market("agents", { signals: manySignals })]}
@@ -99,7 +99,8 @@ describe("EmergingRadar hover card", () => {
 
     expect(card.querySelectorAll("li")).toHaveLength(4);
     expect(within(card).getByText(/\+4 more/)).toBeDefined();
-    expect(card.style.maxHeight).toBe("320px");
+    // The card never scrolls: it is capped by rows, not by a scroll box.
+    expect(card.style.maxHeight).toBe("");
   });
 
   it("puts the strongest signals first so the summary is the useful three", () => {

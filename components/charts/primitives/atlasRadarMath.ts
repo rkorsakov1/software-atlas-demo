@@ -152,12 +152,22 @@ export const moatPolygonPath = (
 
 // --- emerging radar ----------------------------------------------------------
 
+/**
+ * The radar's sectors. "Emerging" is a category for markets in the taxonomy; a
+ * candidate market on this radar is emerging by definition and is placed by the
+ * buyer it would sell to, so that sector would always be empty.
+ */
+export const RADAR_CATEGORIES: readonly Category[] = CATEGORY_ORDER.filter(
+  (category) => category !== "emerging",
+);
+
 /** A category's sector, in radians, measured from the top and running clockwise. */
 export const categorySector = (
   category: Category,
 ): { startAngle: number; endAngle: number; index: number } => {
-  const count = CATEGORY_ORDER.length;
-  const index = Math.max(0, CATEGORY_ORDER.indexOf(category));
+  const count = RADAR_CATEGORIES.length;
+  const found = RADAR_CATEGORIES.indexOf(category);
+  const index = found === -1 ? count - 1 : found;
   const span = (Math.PI * 2) / count;
   const startAngle = -Math.PI / 2 + index * span;
   return { startAngle, endAngle: startAngle + span, index };

@@ -14,6 +14,7 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { href: "/emerging/", label: "Emerging" },
   { href: "/simulator/", label: "Simulator" },
   { href: "/methodology/", label: "Methodology" },
+  { href: "/contribute/", label: "Contribute" },
 ];
 
 const isActiveHref = (pathname: string, href: string): boolean => {
@@ -44,8 +45,8 @@ export const SiteHeader = (): React.ReactElement => {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "whitespace-nowrap rounded-md px-2.5 py-1.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:px-3",
-                      { "bg-secondary text-foreground": active },
+                      "whitespace-nowrap px-2.5 py-1.5 text-muted-foreground transition-colors hover:text-foreground sm:px-3",
+                      { "font-semibold text-foreground": active },
                     )}
                   >
                     {item.label}

@@ -217,3 +217,16 @@ describe("weightedTimeStops", () => {
     expect(weightedTimeStops(2010, 2027, 500)).toEqual({ domain: [2010, 2027], range: [0, 500] });
   });
 });
+
+describe("packEraRows with clipped spans", () => {
+  it("keeps the real chronological order when clipping makes start years tie", () => {
+    const rows = packEraRows([
+      { id: "era-10", startYear: 2010, endYear: 2021, sortYear: 2010 },
+      { id: "era-6", startYear: 2010, endYear: 2015, sortYear: 1998 },
+      { id: "era-7", startYear: 2010, endYear: null, sortYear: 1999 },
+    ]);
+    expect(rows.get("era-6")).toBe(0);
+    expect(rows.get("era-7")).toBe(1);
+    expect(rows.get("era-10")).toBe(2);
+  });
+});

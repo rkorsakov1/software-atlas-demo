@@ -12,13 +12,13 @@ export const HatchDefs = (): React.ReactElement => (
   <defs>
     <pattern
       id={HATCH_PATTERN_ID}
-      width="6"
-      height="6"
+      width="7"
+      height="7"
       patternUnits="userSpaceOnUse"
       patternTransform="rotate(45)"
     >
-      <rect width="6" height="6" fill="currentColor" fillOpacity="0.18" />
-      <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" strokeWidth="2.2" />
+      <rect width="7" height="7" fill="currentColor" fillOpacity="0.3" />
+      <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" strokeOpacity="0.55" strokeWidth="1.2" />
     </pattern>
     <pattern id={DOT_PATTERN_ID} width="5" height="5" patternUnits="userSpaceOnUse">
       <rect width="5" height="5" fill="currentColor" fillOpacity="0.12" />
