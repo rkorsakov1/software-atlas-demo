@@ -2,24 +2,34 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+/** Below this a chart is too small to read, so the panel scrolls instead. */
+export const MIN_FIT_SCALE = 0.6;
+
 export type UseViewportFitResult = {
-  /** True when the measured block is taller than the space a sticky pin would have. */
-  exceedsViewport: boolean;
-  /** Attach to the block whose height decides whether pinning is safe. */
+  /** How much to shrink the block so it fits beside the prose: 1 when it already fits. */
+  scale: number;
+  /** The block's unscaled height in pixels, so the caller can reserve the scaled space. */
+  height: number;
+  /** True when even the minimum scale leaves the block taller than the viewport. */
+  overflows: boolean;
+  /** Attach to the block being fitted. Its layout height is unaffected by the transform. */
   measureRef: (node: HTMLElement | null) => void;
 };
 
 /**
- * A sticky panel only works while it is shorter than the viewport it is pinned
- * in; taller than that and the bottom of a chart becomes unreachable, or the
- * panel grows its own scrollbar and fights the page scroll. This measures the
- * block so the caller can pin it by its other edge — or not at all — instead.
+ * A sticky panel only works while it fits the viewport it is pinned in. Rather
+ * than let a tall chart scroll away (or pin it by an edge it never reaches), this
+ * measures it and returns the scale that makes it fit, down to `MIN_FIT_SCALE`.
  *
  * `reservedPx` is the vertical space the pin cannot use: the sticky offset plus
- * whatever breathing room the layout wants beneath it.
+ * breathing room beneath it.
  */
 export const useViewportFit = (reservedPx: number): UseViewportFitResult => {
-  const [exceedsViewport, setExceedsViewport] = useState<boolean>(false);
+  const [fit, setFit] = useState<{ scale: number; height: number; overflows: boolean }>({
+    scale: 1,
+    height: 0,
+    overflows: false,
+  });
   const [node, setNode] = useState<HTMLElement | null>(null);
 
   const measureRef = useCallback((element: HTMLElement | null): void => {
@@ -31,7 +41,14 @@ export const useViewportFit = (reservedPx: number): UseViewportFitResult => {
     if (typeof window === "undefined") return;
 
     const evaluate = (): void => {
-      setExceedsViewport(node.offsetHeight > window.innerHeight - reservedPx);
+      const height = node.offsetHeight;
+      const available = window.innerHeight - reservedPx;
+      if (height <= 0 || height <= available) {
+        setFit({ scale: 1, height, overflows: false });
+        return;
+      }
+      const scale = Math.max(MIN_FIT_SCALE, available / height);
+      setFit({ scale, height, overflows: height * scale > available });
     };
 
     evaluate();
@@ -50,5 +67,5 @@ export const useViewportFit = (reservedPx: number): UseViewportFitResult => {
     };
   }, [node, reservedPx]);
 
-  return { exceedsViewport, measureRef };
+  return { ...fit, measureRef };
 };

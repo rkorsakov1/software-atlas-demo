@@ -36,11 +36,10 @@ const MOUNT_LOOKAHEAD = 1;
 
 /**
  * Vertical space a pinned graphic cannot use: the `top-20` sticky offset plus a
- * little room beneath it. Past this, the panel pins by its bottom edge instead,
- * so a tall chart stays whole and scrolls with the page rather than growing its
- * own scrollbar.
+ * little room beneath it. A taller graphic is scaled down to fit, so the chart
+ * for the chapter being read is always whole and on screen.
  */
-const STICKY_RESERVED_PX = 112;
+const STICKY_RESERVED_PX = 150;
 
 /**
  * Story mode. On a wide screen one graphic sticks beside the prose and swaps as
@@ -50,7 +49,7 @@ const STICKY_RESERVED_PX = 112;
 export const StoryRoute = (): React.ReactElement => {
   const stacked = useStackedLayout();
   const { activeIndex, registerStep } = useActiveStep(chapters.length);
-  const { exceedsViewport, measureRef } = useViewportFit(STICKY_RESERVED_PX);
+  const { scale, height, overflows, measureRef } = useViewportFit(STICKY_RESERVED_PX);
 
   if (chapters.length === 0) {
     return (
@@ -111,9 +110,7 @@ export const StoryRoute = (): React.ReactElement => {
                     {index <= activeIndex + MOUNT_LOOKAHEAD ? (
                       <StoryGraphic key={chapter.id} chapter={chapter} />
                     ) : (
-                      <Skeleton
-                        className={cn("w-full", graphicMinHeightClass(chapter.graphic))}
-                      />
+                      <Skeleton className={cn("w-full", graphicMinHeightClass(chapter.graphic))} />
                     )}
                   </div>
                 ) : null}
@@ -126,37 +123,39 @@ export const StoryRoute = (): React.ReactElement => {
       {stacked || activeChapter === undefined ? null : (
         <aside
           aria-label="Chapter graphic"
-          className={cn("hidden min-w-0 py-8 lg:block lg:self-start", {
-            "lg:sticky lg:top-20": !exceedsViewport,
-            "lg:sticky lg:bottom-6": exceedsViewport,
+          className={cn("hidden min-w-0 py-8 lg:sticky lg:top-20 lg:block lg:self-start", {
+            "lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto": overflows,
           })}
         >
-          <div ref={measureRef} className="flex min-w-0 flex-col gap-3">
-            <div className="flex items-baseline justify-between gap-3">
-              <p className="min-w-0 truncate font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                Chapter {activeChapter.order} of {chapters.length} · {activeChapter.title}
-              </p>
-              <Link
-                href={graphicHref(activeChapter)}
-                className="shrink-0 text-xs underline underline-offset-4 hover:text-foreground"
-              >
-                {graphicLinkLabel(activeChapter)}
-              </Link>
-            </div>
+          <div style={scale < 1 ? { height: height * scale } : undefined}>
             <div
-              aria-hidden="true"
-              className="flex gap-1"
+              ref={measureRef}
+              className="flex min-w-0 origin-top-left flex-col gap-3"
+              style={scale < 1 ? { transform: `scale(${scale})` } : undefined}
             >
-              {chapters.map((chapter, index) => (
-                <span
-                  key={chapter.id}
-                  className={cn("h-0.5 flex-1 rounded-full bg-border", {
-                    "bg-foreground": index <= activeIndex,
-                  })}
-                />
-              ))}
+              <div className="flex items-baseline justify-between gap-3">
+                <p className="min-w-0 truncate font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  Chapter {activeChapter.order} of {chapters.length} · {activeChapter.title}
+                </p>
+                <Link
+                  href={graphicHref(activeChapter)}
+                  className="shrink-0 text-xs underline underline-offset-4 hover:text-foreground"
+                >
+                  {graphicLinkLabel(activeChapter)}
+                </Link>
+              </div>
+              <div aria-hidden="true" className="flex gap-1">
+                {chapters.map((chapter, index) => (
+                  <span
+                    key={chapter.id}
+                    className={cn("h-0.5 flex-1 rounded-full bg-border", {
+                      "bg-foreground": index <= activeIndex,
+                    })}
+                  />
+                ))}
+              </div>
+              <StoryGraphic key={activeChapter.id} chapter={activeChapter} />
             </div>
-            <StoryGraphic key={activeChapter.id} chapter={activeChapter} />
           </div>
         </aside>
       )}

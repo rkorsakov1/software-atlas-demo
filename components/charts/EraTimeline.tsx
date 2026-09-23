@@ -555,12 +555,13 @@ export const EraTimeline = ({
   }, [pooledCount, sortedEvents]);
 
   const takeaway = useMemo(() => {
-    if (sortedEras.length === 0 && sortedEvents.length === 0) {
+    if (visibleEras.length === 0 && sortedEvents.length === 0) {
       return "No eras or events fall inside the selected years.";
     }
     const shifts = sortedEvents.filter((event) => isStructuralBreak(event.type)).length;
-    return `${sortedEras.length} eras and ${sortedEvents.length} events between ${fromYear} and ${toYear}; the ${shifts} platform shifts are the breaks where leadership changed hands.`;
-  }, [fromYear, sortedEras.length, sortedEvents, toYear]);
+    const shiftText = shifts === 1 ? "1 platform shift" : `${shifts} platform shifts`;
+    return `${visibleEras.length} eras and ${sortedEvents.length} events, ${fromYear}–${toYear}. Dashed lines mark the ${shiftText}, where leadership changed hands.`;
+  }, [fromYear, visibleEras.length, sortedEvents, toYear]);
 
   const eventColumns = useMemo<DataTableColumn<CompetitiveEvent>[]>(
     () => [
@@ -987,6 +988,7 @@ export const EraTimeline = ({
           {sortedEras.map((era, index) => (
             <li
               key={`key-${era.id}`}
+              hidden={!eraRows.has(era.id)}
               className={cn("flex items-baseline gap-1.5", {
                 "text-foreground": activeEraId === era.id,
               })}
