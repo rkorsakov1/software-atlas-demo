@@ -112,7 +112,7 @@ export const chapters: StoryChapter[] = [
       "[F] Cloud is the one market with published share data. In mid-2017 AWS held 34% and Microsoft 11% (S04). By mid-2026 AWS was at 28%, Microsoft 20% and Google 15% (S03). Microsoft passed 20% in 2021 (S06), peaked at 23% in late 2022 (S96) and has held 20–21% since (S97, S98).",
       "[A] The answer depends on how you measure it. The top three went from about half the market to two thirds. But HHI, the standard concentration index, peaked in 2022 and fell, because AWS lost share to its two nearest rivals rather than to small players. More oligopoly, less dominance.",
       "[I] Our HHI is computed from published shares, treating the unreported rest as fragmented, so it's a lower bound. The 2023 US merger guidelines put the line for a concentrated market at 1,800 (B09).",
-      "[A] For every other market, reliable share data sits behind paywalls, so the chart shows none rather than a guess.",
+      "[A] For most other markets, share data sits behind paywalls. Where a publisher has released vendor shares (CRM, databases, security, operating systems, ERP, AI model APIs), the Explore view shows them, gaps included.",
     ],
     graphic: "share",
     graphicState: {
