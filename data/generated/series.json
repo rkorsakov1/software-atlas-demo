@@ -769,6 +769,356 @@
       }
     },
     {
+      "marketId": "crm",
+      "year": 2021,
+      "companyId": "salesforce",
+      "point": {
+        "value": 23.8,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2021,
+      "companyId": "sap",
+      "point": {
+        "value": 5.4,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2021,
+      "companyId": "microsoft",
+      "point": {
+        "value": 5.3,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2021,
+      "companyId": "oracle",
+      "point": {
+        "value": 5.1,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2021,
+      "companyId": "adobe",
+      "point": {
+        "value": 3.8,
+        "year": 2021,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2022,
+      "companyId": "salesforce",
+      "point": {
+        "value": 22.9,
+        "year": 2022,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2022,
+      "companyId": "microsoft",
+      "point": {
+        "value": 5.8,
+        "year": 2022,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2022,
+      "companyId": "oracle",
+      "point": {
+        "value": 5.1,
+        "year": 2022,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2022,
+      "companyId": "sap",
+      "point": {
+        "value": 4.7,
+        "year": 2022,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2022,
+      "companyId": "adobe",
+      "point": {
+        "value": 3.6,
+        "year": 2022,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2023,
+      "companyId": "salesforce",
+      "point": {
+        "value": 22.1,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2023,
+      "companyId": "microsoft",
+      "point": {
+        "value": 5.7,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2023,
+      "companyId": "oracle",
+      "point": {
+        "value": 4.7,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2023,
+      "companyId": "sap",
+      "point": {
+        "value": 3.8,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2023,
+      "companyId": "adobe",
+      "point": {
+        "value": 3.5,
+        "year": 2023,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2024,
+      "companyId": "salesforce",
+      "point": {
+        "value": 20.7,
+        "year": 2024,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2024,
+      "companyId": "microsoft",
+      "point": {
+        "value": 5.2,
+        "year": 2024,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2024,
+      "companyId": "oracle",
+      "point": {
+        "value": 4.1,
+        "year": 2024,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2024,
+      "companyId": "adobe",
+      "point": {
+        "value": 3.4,
+        "year": 2024,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2024,
+      "companyId": "sap",
+      "point": {
+        "value": 3.1,
+        "year": 2024,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2025,
+      "companyId": "salesforce",
+      "point": {
+        "value": 20,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2025,
+      "companyId": "oracle",
+      "point": {
+        "value": 4.1,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2025,
+      "companyId": "microsoft",
+      "point": {
+        "value": 4,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2025,
+      "companyId": "adobe",
+      "point": {
+        "value": 3.4,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
+      "marketId": "crm",
+      "year": 2025,
+      "companyId": "sap",
+      "point": {
+        "value": 3.1,
+        "year": 2025,
+        "unit": "percent",
+        "sourceId": "D16A3CF",
+        "confidence": "reported",
+        "note": "IDC figures; the CRM rows for 2011-2020 are Gartner's, which defines the market differently, so compare within one publisher.",
+        "definition": "IDC CRM applications (Semiannual Software Tracker)"
+      }
+    },
+    {
       "marketId": "databases",
       "year": 2004,
       "companyId": "oracle",
@@ -1852,6 +2202,16 @@
       "date": "2011",
       "kind": "press",
       "url": "https://www.telecompaper.com/news/worldwide-enterprise-software-market-grows-8-5-in-2010--801910",
+      "verified": true,
+      "reliability": "secondary"
+    },
+    {
+      "id": "D16A3CF",
+      "title": "Salesforce Extends Its CRM Market Lead, Oracle Now Its Closest Competitor",
+      "publisher": "CX Foundation (reporting IDC)",
+      "date": "2026-06-09",
+      "kind": "press",
+      "url": "https://cxfoundation.com/news/salesforce-extends-crm-market-lead",
       "verified": true,
       "reliability": "secondary"
     },

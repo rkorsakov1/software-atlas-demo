@@ -2004,3 +2004,21 @@ below was fetched in this pass. Gartner URLs are excluded because none could be 
 { id: "S165", title: "Gartner Raises 2026 Global IT Spending Forecast To $6.37 Trillion", publisher: "Dataconomy", date: "2026-07-28", kind: "press", url: "https://dataconomy.com/2026/07/28/it-spending-forecast-2026-6-37t/", verified: true, reliability: "secondary" },
 ```
 
+
+## 15. SEC revenue for Alphabet, Apple, Meta and Nvidia (2026-09-24)
+
+Fetched `https://data.sec.gov/api/xbrl/companyfacts/CIK{0001652044,0000320193,0001326801,0001045810}.json`
+(HTTP 200 each). Annual revenue read from us-gaap `RevenueFromContractWithCustomerExcludingAssessedTax`,
+`Revenues` or `SalesRevenueNet`, 10-K and 10-K/A only, 350–380-day periods, most recent filing per
+fiscal year. Gross margin modeled as 1 − cost of revenue ÷ revenue where both share a period end.
+Spot checks against the companies' own annual results: Alphabet FY2024 $350.018B, Apple FY2024
+$391.035B, Meta FY2024 $164.501B, Nvidia FY2025 $130.497B. Cited as S28 (SEC XBRL, verified).
+The same logic is now `scripts/sec-revenue.ts`.
+
+## 16. IDC CRM vendor shares, 2021–2025 (2026-09-24)
+
+`https://cxfoundation.com/news/salesforce-extends-crm-market-lead` (CX Foundation, 9 June 2026,
+reporting IDC's Semiannual Software Tracker). Fetched twice; the share table (Salesforce, Oracle,
+Microsoft, Adobe, SAP, Others, 2021–2025) matches the article's own sentences ("declined from 20.7%
+in 2024 to 20.0%", Microsoft "fell from 5.2% to 4.0%", Oracle "4.1%"). Shipped as reported with an
+IDC definition; the 2011–2020 CRM rows are Gartner's and are not comparable.

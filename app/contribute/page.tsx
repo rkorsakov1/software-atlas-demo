@@ -59,14 +59,9 @@ const SPECIFIC_ASKS: readonly Ask[] = [
       "No company has a market-cap series yet, so the 'Largest' comparison uses revenue and the bubble chart can't size by value. Year-end market caps from filings or exchange data would fix both.",
   },
   {
-    title: "Revenue for Alphabet, Apple, Meta and Nvidia",
+    title: "CRM shares for HubSpot and Zoho, and Gartner's 2019–2020 figures",
     detail:
-      "They are missing from the revenue chart and the 'Largest by revenue' comparison. SEC 10-K figures, one row per fiscal year.",
-  },
-  {
-    title: "CRM vendor shares for 2019–2025, including Salesforce and HubSpot",
-    detail:
-      "The CRM share chart has Salesforce through 2018 only, and no HubSpot at all. Gartner and IDC publish annual CRM shares.",
+      "The CRM chart has Gartner shares to 2018 and IDC's top five for 2021–2025. HubSpot and Zoho aren't named in either, and Salesforce is missing for 2019–2020.",
   },
   {
     title: "Operating systems, security and ERP vendor shares for more years",

@@ -19,7 +19,7 @@ import {
   placedLabelsById,
   type OutsideLabelMark,
 } from "@/components/charts/primitives/atlasLabelPlacement";
-import { Axis, ticksFrom } from "@/components/charts/primitives/Axis";
+import { Axis, logTicksFrom, ticksFrom } from "@/components/charts/primitives/Axis";
 import { ChartFrame } from "@/components/charts/primitives/ChartFrame";
 import { ChartTooltip, type TooltipRow } from "@/components/charts/primitives/ChartTooltip";
 import { DataTable, type DataTableColumn } from "@/components/charts/primitives/DataTable";
@@ -231,7 +231,7 @@ export const CompetitiveBubble = ({
   }, [data, innerHeight, trailPoints]);
 
   const xTicks = useMemo(
-    () => ticksFrom(xScale, narrow ? 3 : 6, formatUsdBillions),
+    () => logTicksFrom(xScale, formatUsdBillions, narrow ? 72 : 56),
     [narrow, xScale],
   );
 

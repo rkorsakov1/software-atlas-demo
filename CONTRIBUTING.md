@@ -30,6 +30,16 @@ Rules that keep the Atlas honest:
 - **Say what's uncertain.** Use `estimated` when a source is approximate or you couldn't open it, and
   `modeled` when you calculated it (explain how in `notes`).
 
+**Company revenue for US filers** comes straight from SEC filings. Find the company's CIK on
+[EDGAR](https://www.sec.gov/edgar/searchedgar/companysearch), then run:
+
+```bash
+SEC_USER_AGENT="Your Name you@example.com" npm run sec-revenue -- <atlasCompanyId>:<CIK>
+```
+
+It prints `revenueByYear` and `grossMarginByYear` blocks to paste into that company in
+`data/companies.ts`. The SEC requires a contact email in the User-Agent.
+
 Everything else (eras, events, companies, emerging markets, story chapters) is in the TypeScript files
 in `data/`. It's validated by the Zod schemas in `data/schemas.ts` and by `scripts/validate-data.ts`.
 

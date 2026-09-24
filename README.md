@@ -1,5 +1,7 @@
 # The Software Atlas
 
+**Live site: https://rkorsakov1.github.io/software-atlas-demo/**
+
 How software markets are born, consolidate, get disrupted and give rise to new ones, from 1950 to
 today.
 

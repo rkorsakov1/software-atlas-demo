@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "series": "tsx scripts/build-series.ts",
+    "sec-revenue": "tsx scripts/sec-revenue.ts",
     "validate-data": "tsx scripts/build-series.ts --check && tsx scripts/validate-data.ts",
     "test": "vitest run",
     "prebuild": "npm run validate-data && npm run typecheck",

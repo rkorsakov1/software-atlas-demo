@@ -128,3 +128,26 @@ export const ticksFrom = (
   count: number,
   format: (value: number) => string,
 ): AxisTick[] => scale.ticks(count).map((value) => ({ value, label: format(value) }));
+
+/**
+ * Ticks for a log scale: d3 offers every 1–9 × 10ⁿ, which piles labels up at the
+ * top of each decade. Keeps only the 1, 2 and 5 steps, then drops any tick that
+ * would sit closer than `minGapPx` to the one before it.
+ */
+export const logTicksFrom = (
+  scale: { ticks: (count?: number) => number[]; (value: number): number },
+  format: (value: number) => string,
+  minGapPx = 56,
+): AxisTick[] => {
+  const ticks: AxisTick[] = [];
+  let lastX = Number.NEGATIVE_INFINITY;
+  for (const value of scale.ticks()) {
+    const mantissa = Math.round(value / 10 ** Math.floor(Math.log10(value)));
+    if (mantissa !== 1 && mantissa !== 2 && mantissa !== 5) continue;
+    const x = scale(value);
+    if (x - lastX < minGapPx) continue;
+    ticks.push({ value, label: format(value) });
+    lastX = x;
+  }
+  return ticks;
+};

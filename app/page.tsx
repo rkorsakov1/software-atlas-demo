@@ -109,7 +109,7 @@ const StoryPage = (): React.ReactElement => (
           Explore
         </Link>
         , and the gaps are listed on{" "}
-        <Link href="/contribute/" className="underline underline-offset-4">
+        <Link href="/contribute/" className="whitespace-nowrap underline underline-offset-4">
           Help complete the Atlas
         </Link>
         .
