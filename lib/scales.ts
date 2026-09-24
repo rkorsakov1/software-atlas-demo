@@ -115,6 +115,7 @@ export const EVENT_TYPE_LANES: readonly EventType[] = [
   "license-change",
   "regulation",
   "spin-off",
+  "milestone",
 ];
 
 export const eventTypeLane = (type: EventType): number => {

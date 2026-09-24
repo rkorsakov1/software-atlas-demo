@@ -120,6 +120,7 @@ export const eventTypeLabel: Record<EventType, string> = {
   "pricing-shift": "Pricing shift",
   launch: "Launch",
   "spin-off": "Spin-off",
+  milestone: "Milestone",
 };
 
 export const moatLabel: Record<MoatKey, string> = {

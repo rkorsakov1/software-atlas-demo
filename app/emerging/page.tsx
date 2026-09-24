@@ -9,7 +9,7 @@ import { emerging } from "@/data";
 export const metadata: Metadata = {
   title: "Emerging markets",
   description:
-    "Eighteen candidate software markets, each scored on six typed signal types with its sources, stage, horizon and risks.",
+    "Candidate software markets, each scored on six typed signal types with its sources, stage, horizon and risks.",
 };
 
 const EmergingFallback = (): React.ReactElement => (

@@ -179,6 +179,7 @@ export const eventTypeSchema = z.enum([
   "pricing-shift",
   "launch",
   "spin-off",
+  "milestone",
 ]);
 
 export const competitiveEventSchema = z

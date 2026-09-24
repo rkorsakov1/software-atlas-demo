@@ -17,6 +17,7 @@ export const eventTypeColorVar: Record<EventType, string> = {
   "license-change": "color-mix(in oklab, var(--cat-infrastructure) 60%, var(--foreground))",
   regulation: "color-mix(in oklab, var(--cat-horizontal) 60%, var(--foreground))",
   "spin-off": "color-mix(in oklab, var(--cat-emerging) 60%, var(--foreground))",
+  milestone: "var(--muted-foreground)",
 };
 
 export const eventTypeColor = (type: EventType): string =>

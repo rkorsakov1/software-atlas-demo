@@ -1,7 +1,7 @@
 import type { EmergingMarket } from "@/data/types";
 
 /**
- * Eighteen candidate markets, scored against the six-signal framework.
+ * Candidate markets, scored against the six-signal framework.
  *
  * The first twelve are the AI-era candidates from the original research. The six
  * that follow (`em-einvoicing` onwards) were added after an audit showed the set
@@ -785,6 +785,44 @@ export const emerging: EmergingMarket[] = [
       "This may be a governance-and-risk feature rather than a market: the workflow suites and the big audit firms can absorb it, and the cloud providers will ship compliance packs to keep customers in place.",
       "It is EU-only, which caps the addressable base, and the first compliance cycle is a one-off build - spend can fall sharply once the register exists.",
       "This project verified the obligation and its supervision, not a single euro of vendor revenue, so the step from rule to market is an inference carried in this thesis rather than evidence in a signal.",
+    ],
+    stage: "emerging",
+    horizon: "2-5y",
+  },
+  {
+    id: "ai-glasses",
+    name: "AI glasses",
+    category: "consumer",
+    thesis:
+      "The face computer that is arriving is not the headset but ordinary-looking glasses with a camera, microphones and an assistant. Headsets asked people to change what they wear and where they sit; glasses don't, which is why the same company's VR line is shrinking while its glasses triple.",
+    signals: [
+      {
+        type: "new-interface",
+        evidence:
+          "Meta and EssilorLuxottica sold more than 7 million smart glasses in 2025, against 2 million Ray-Ban Meta units in the sixteen months from the October 2023 launch to February 2025.",
+        strength: 3,
+        sourceIds: ["S124"],
+      },
+      {
+        type: "leading-indicator",
+        evidence:
+          "IDC expects the smart glasses market to have grown 211.2% in 2025 and forecasts 29.3% a year from 2025 to 2029, while VR headsets fell: Meta Quest shipments down 16% and Apple Vision Pro at 45,000 units against 390,000 in 2024.",
+        strength: 2,
+        sourceIds: ["S123"],
+      },
+      {
+        type: "platform-shift",
+        evidence:
+          "Meta invested $21.40B in Reality Labs in 2025 to 'build the next computing platform' and expects the segment to operate at a loss for the foreseeable future, so the leading vendor is subsidising the category.",
+        strength: 2,
+        sourceIds: ["S122"],
+      },
+    ],
+    keyPlayerIds: ["meta", "google", "apple"],
+    risks: [
+      "The software layer may stay inside the device maker's assistant, leaving no independent market for apps.",
+      "Always-on cameras invite privacy regulation that could limit where the glasses can be worn.",
+      "Meta's subsidy hides the true unit economics; the category may shrink when it stops.",
     ],
     stage: "emerging",
     horizon: "2-5y",

@@ -4,16 +4,9 @@ import Link from "next/link";
 import { ConfidenceBadge } from "@/components/charts/primitives";
 import { SourceList } from "@/components/profile/SourceList";
 import { companies, emerging, markets, moatRubric, sources } from "@/data";
-import type { Category, Confidence, MoatKey, MoatScore, SignalType } from "@/data/types";
-import {
-  categoryLabel,
-  confidenceDescription,
-  confidenceLabel,
-  moatLabel,
-  signalTypeLabel,
-} from "@/lib/format";
+import type { Confidence, MoatKey, MoatScore, SignalType } from "@/data/types";
+import { confidenceDescription, confidenceLabel, moatLabel } from "@/lib/format";
 import { HHI_HIGHLY_CONCENTRATED, HHI_METHOD_NOTE } from "@/lib/hhi";
-import { CATEGORY_ORDER } from "@/lib/scales";
 import { byId, shareSeries } from "@/lib/selectors";
 import { SIMULATOR_DISCLAIMER } from "@/lib/simulation";
 
@@ -56,27 +49,24 @@ const companiesWithMargin = companies.filter(
 ).length;
 const marketsWithShares = markets.filter((market) => market.sharesByYear.length > 0).length;
 
-/** The one candidate on the emerging radar that is not framed around AI. */
-const NON_AI_EMERGING_IDS: readonly string[] = ["post-quantum-cryptography"];
+/** Candidates on the emerging radar that are not framed around AI. */
+const NON_AI_EMERGING_IDS: readonly string[] = [
+  "post-quantum-cryptography",
+  "em-einvoicing",
+  "em-health-interop",
+  "em-grid-flex",
+  "em-digital-identity",
+  "em-embedded-finance",
+  "em-operational-resilience",
+];
 
 const aiFramedEmerging = emerging.filter(
   (market) => !NON_AI_EMERGING_IDS.includes(market.id),
 ).length;
 const emergingSignals = emerging.flatMap((market) => market.signals);
-const signalTypeCount = Object.keys(signalTypeLabel).length;
 
 const signalsOfType = (type: SignalType): number =>
   emergingSignals.filter((signal) => signal.type === type).length;
-
-const emergingInCategory = (category: Category): number =>
-  emerging.filter((market) => market.category === category).length;
-
-const emergingCategorySpread = CATEGORY_ORDER.map(
-  (category) => `${categoryLabel[category].toLowerCase()} ${emergingInCategory(category)}`,
-).join(", ");
-const emptyRadarSectors = CATEGORY_ORDER.filter(
-  (category) => emergingInCategory(category) === 0,
-).length;
 
 type SectionProps = {
   id: string;
@@ -535,27 +525,15 @@ const MethodologyPage = (): React.ReactElement => (
             is a guess with a rubric attached.
           </li>
           <li>
-            <strong className="font-semibold">
-              The emerging set is AI-heavy, and the skew is inherited.
-            </strong>{" "}
-            {aiFramedEmerging} of the {emerging.length} candidate markets on the radar are framed
-            around AI. Only post-quantum cryptography sits outside it, and sovereign cloud is
-            outside it only in part, through regulation. That shape comes from the Phase 1 research
-            cut of 21 September 2026, not from the data layer: the research names{" "}
-            {signalTypeCount} signal types, but of the {emergingSignals.length} signals recorded
-            here {signalsOfType("platform-shift")} are platform shifts and{" "}
-            {signalsOfType("leading-indicator")} are leading indicators, against{" "}
-            {signalsOfType("regulation")} for regulation and {signalsOfType("unbundling")} for
-            unbundling. The framework was not applied evenly. Applied evenly it would likely have
-            surfaced regulation-driven categories — e-invoicing mandates, digital identity wallets,
-            healthcare interoperability — and cost-curve-driven ones such as grid and energy
-            management or battery software. The Atlas is not claiming those are emerging markets:
-            no sourced evidence was gathered for them, which is why they are absent rather than
-            scored low. The consequence is structural and visible on screen. The candidate set runs{" "}
-            {emergingCategorySpread}, so {emptyRadarSectors} of the radar&apos;s{" "}
-            {CATEGORY_ORDER.length} sectors are empty by construction. Two blank sectors are a
-            property of the candidate set, not a rendering fault. The {emerging.length} candidates
-            that did ship are each individually sourced.
+            <strong className="font-semibold">The emerging set leans towards AI.</strong>{" "}
+            {aiFramedEmerging} of the {emerging.length} candidate markets are framed around AI. The
+            first research cut was almost all AI, so {NON_AI_EMERGING_IDS.length} candidates driven by
+            regulation or falling costs (e-invoicing, health-data APIs, grid flexibility, digital
+            identity, embedded finance, operational resilience, post-quantum cryptography) were added
+            to balance it. Of the {emergingSignals.length} signals recorded,{" "}
+            {signalsOfType("platform-shift")} are platform shifts,{" "}
+            {signalsOfType("leading-indicator")} leading indicators,{" "}
+            {signalsOfType("regulation")} regulation and {signalsOfType("unbundling")} unbundling.
           </li>
         </ul>
       </Section>

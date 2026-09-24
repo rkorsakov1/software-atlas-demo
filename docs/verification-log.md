@@ -2022,3 +2022,30 @@ reporting IDC's Semiannual Software Tracker). Fetched twice; the share table (Sa
 Microsoft, Adobe, SAP, Others, 2021–2025) matches the article's own sentences ("declined from 20.7%
 in 2024 to 20.0%", Microsoft "fell from 5.2% to 4.0%", Oracle "4.1%"). Shipped as reported with an
 IDC definition; the 2011–2020 CRM rows are Gartner's and are not comparable.
+
+## 17. SEC revenue sweep, event reclassification, AI glasses (2026-09-24)
+
+**Revenue.** SEC companyfacts fetched for 39 CIKs at under 10 requests/second (owner's contact
+email in the User-Agent, with permission). CIKs resolved from `company_tickers.json` or EDGAR
+company browse; every one confirmed by the `entityName` in the returned facts. Three first matches
+were wrong entities and were corrected (Confluent 1699838, Tableau Software Inc 1303652, Nuance
+Communications 1002517); "CA, Inc." resolved via EDGAR browse to 356028. 36 companies received a
+revenue series (most recent 10-K/20-F/40-F per fiscal year, us-gaap or IFRS in USD), 33 with a
+modeled gross margin. Not shipped: Nebius (CIK carries Yandex history before 2024; post-split
+figures don't reconcile), Sybase and Sun (no XBRL facts). Alibaba ships as estimated: USD values are
+the 20-F convenience translations of RMB.
+
+**Events.** Nine events were retyped after review: a platform shift is a change that reset who wins,
+not a reading. Azure passing $100B, Synergy's Q2 2026 growth and Gartner's AI spending forecast
+(previously platform shifts), and AI's venture share, model-lab revenue, Gartner's software forecast,
+Atlassian FY26 and AWS at 28% (previously disruptions) are now the new `milestone` type. MCP moving to
+the Linux Foundation is a licence/governance change. Platform shifts: IBM PC, Macintosh, Mosaic,
+Windows 95, AWS, iPhone, ChatGPT.
+
+**Meta / AI glasses.** S121 Meta newsroom "Introducing Meta" (28 Oct 2021), read. S122 Meta FY2025
+10-K on sec.gov: "total RL investments were $21.40 billion in 2025"; RL "to continue to operate at a
+loss for the foreseeable future"; "build the next computing platform", read. S123 The Register,
+2 Jan 2026, reporting IDC: Vision Pro 390,000 units (2024) and 45,000 (2025); Quest down 16% YoY in
+Q1–Q3 2025; smart glasses +211.2% in 2025, 29.3% CAGR 2025–2029, read. S124 UploadVR, 11 Feb 2026:
+"more than 7 million smart glasses in 2025", 2 million from October 2023 to February 2025, read
+(CNBC's version of the same figures returned 403).

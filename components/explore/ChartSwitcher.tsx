@@ -22,7 +22,7 @@ export const CHART_DESCRIPTION: Record<ChartKey, string> = {
   lineage: "Who bought whom: acquisitions and spin-offs as a directed graph.",
   bundling: "Capability leaving a market for a suite, and coming back out again.",
   moat: "Seven moat axes for up to three pinned companies.",
-  emerging: "Eighteen candidate markets by horizon, category and evidence weight.",
+  emerging: "Candidate markets by horizon, category and evidence weight.",
 };
 
 const ARROW_STEP: Readonly<Record<string, number>> = {

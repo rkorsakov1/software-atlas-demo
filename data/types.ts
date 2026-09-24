@@ -142,7 +142,9 @@ export type EventType =
   | "platform-shift"
   | "pricing-shift"
   | "launch"
-  | "spin-off";
+  | "spin-off"
+  /** A reading, not an action: a revenue threshold, an analyst figure, a market data point. */
+  | "milestone";
 
 export type EventStatus = "announced" | "completed" | "abandoned";
 

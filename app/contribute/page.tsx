@@ -69,6 +69,21 @@ const SPECIFIC_ASKS: readonly Ask[] = [
       "Each has one or two years, which is not enough for a trend, so they are left out of the share chart for now.",
   },
   {
+    title: "Revenue for companies that report outside US dollars",
+    detail:
+      "SAP, Nokia, RELX and Wolters Kluwer report in euros or pounds, so they have no series yet. Annual revenue from their annual reports, in the reporting currency, plus a decision on how to convert. Alibaba ships as estimated from its 20-F dollar translations; Nebius needs its post-2024 figures separated from Yandex's history.",
+  },
+  {
+    title: "Revenue before 2009 for the companies that defined earlier eras",
+    detail:
+      "SEC structured data starts in 2009, so Lotus, Netscape, PeopleSoft, Siebel, BEA, Sun, Sybase, Digital Equipment, Compaq, WordPerfect and Borland have no revenue line. Their annual reports on EDGAR (1993 onwards) or company histories have the figures.",
+  },
+  {
+    title: "A size for the AI glasses market",
+    detail:
+      "The emerging radar now includes AI glasses, backed by unit sales (7 million+ in 2025). A sourced revenue figure for the category would let it enter the market-size charts.",
+  },
+  {
     title: "Video streaming revenue",
     detail:
       "Only music streaming figures were found (IFPI). Worldwide subscription video revenue from Ampere, MPA or company filings would size the market properly.",
