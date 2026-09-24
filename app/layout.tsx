@@ -5,6 +5,7 @@ import "@/app/globals.css";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { AtlasProviders } from "@/components/layout/AtlasProviders";
+import { DesktopNudge } from "@/components/layout/DesktopNudge";
 
 const sans = Geist({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ const RootLayout = ({ children }: RootLayoutProps): React.ReactElement => (
         </a>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
+          <DesktopNudge />
           <main id="main" className="flex-1">
             {children}
           </main>

@@ -19,12 +19,12 @@ type Takeaway = { title: string; body: string };
 /** The Atlas's own synthesis of the ten chapters: analysis, not new facts. */
 const TAKEAWAYS: readonly Takeaway[] = [
   {
-    title: "Markets appear when a platform stops giving something away",
-    body: "IBM priced software separately in 1969 and an industry appeared. Browsers, app stores and now AI models repeat the move: whatever the platform stops bundling becomes someone's market.",
+    title: "Markets often appear when a platform stops giving something away",
+    body: "IBM priced software separately in 1969 and an industry appeared. Browsers and app stores repeated the move, and AI models may be next. It's a frequent route to a new market, not the only one.",
   },
   {
-    title: "Survivors own a layer the next platform still needs",
-    body: "Across eleven eras, incumbents lasted by holding something the new platform depended on, by disrupting themselves first, or by buying the challenger at a price that looked absurd at the time.",
+    title: "Survivors' habits aren't a recipe",
+    body: "Survivors often held a layer the new platform needed, disrupted themselves first, or bought the challenger. But Sun held Java and still sold out, and Novell bought WordPerfect and still lost. The habits are common to winners and losers alike.",
   },
   {
     title: "Concentration rotates more than it ratchets",
@@ -54,8 +54,9 @@ const StoryPage = (): React.ReactElement => (
         The Software Atlas
       </h1>
       <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-        How software markets are born, consolidate, get disrupted and give rise to new ones. Ten
-        chapters, {eras.length} eras, one recurring pattern.
+        How software markets are born, consolidate, get disrupted and give rise to new ones.{" "}
+        <span className="whitespace-nowrap">Ten chapters, {eras.length} eras:</span> what repeats,
+        and where it doesn&apos;t.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <Button asChild>
@@ -103,16 +104,16 @@ const StoryPage = (): React.ReactElement => (
           </li>
         ))}
       </ol>
-      <p className="mt-10 max-w-3xl text-pretty text-sm text-muted-foreground">
-        These are our reading of the evidence, not facts. Every number behind them is in{" "}
+      <p className="mt-10 text-sm text-muted-foreground">
+        This is our reading of the evidence, not fact. The numbers are in{" "}
         <Link href="/explore/" className="underline underline-offset-4">
           Explore
         </Link>
-        , and the gaps are listed on{" "}
-        <Link href="/contribute/" className="whitespace-nowrap underline underline-offset-4">
-          Help complete the Atlas
-        </Link>
-        .
+        ; the gaps are on the{" "}
+        <Link href="/contribute/" className="underline underline-offset-4">
+          Contribute
+        </Link>{" "}
+        page.
       </p>
     </section>
   </div>

@@ -121,7 +121,7 @@ export const YearScrubber = ({
         />
       </div>
 
-      <p aria-live="polite" className="mt-2 text-xs text-muted-foreground">
+      <p aria-live="polite" className="mt-2 hidden text-xs text-muted-foreground sm:block">
         {era === undefined
           ? `No era in the dataset covers ${year}.`
           : `${era.name} · ${formatYearRange(era.startYear, era.endYear)} · ${era.businessModel}`}

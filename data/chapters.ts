@@ -20,7 +20,7 @@ export const chapters: StoryChapter[] = [
     body: [
       "[F] On 23 June 1969, IBM announced it would start charging for software separately from its machines. The Justice Department had filed its antitrust suit that January (B03, B01).",
       "[I] Historians treat this as the birth of commercial software. Once IBM's software had a price, anyone could build a cheaper one, and a market existed.",
-      "[A] The pattern repeats. A dominant platform stops giving something away, and a new market appears. It happened with browsers, with app stores, and it is happening now between AI models and the apps built on them.",
+      "[A] It happens again and again, though not every time: a dominant platform stops giving something away, and a new market appears. It happened with browsers and with app stores, and it may be happening now between AI models and the apps built on them.",
     ],
     graphic: "timeline",
     graphicState: {
@@ -41,7 +41,8 @@ export const chapters: StoryChapter[] = [
       "[F] Commercial software has gone through eleven eras, each built on a new technology and a new way of charging: licences for minicomputers, boxed retail for PCs, big licences plus maintenance for client-server, subscriptions for SaaS, metered usage for cloud, per-token pricing for AI models.",
       "[I] The losers of each shift fail the same way. Lotus and WordPerfect were late to Windows. Netscape had the better browser but no distribution. Nokia and BlackBerry owned the phone, not the platform.",
       "[F] BlackBerry shows the cost: its revenue fell from $19.9B in fiscal 2011 to $2.2B five years later (S28).",
-      "[A] The survivors did one of three things. They owned a layer the new platform still needed: Oracle's database, Microsoft's identity, Adobe's PDF. They disrupted themselves first: Office went subscription in 2011 (S70), Creative Suite was retired in 2013 (S66). Or they bought the challenger at a price that looked absurd: GitHub for $7.5B (S50), LinkedIn for $26.2B (S46), Wiz for $32B (S20).",
+      "[A] Survivors tend to have done one of three things. They owned a layer the new platform still needed: Oracle's database, Microsoft's identity, Adobe's PDF. They disrupted themselves first: Office went subscription in 2011 (S70), Creative Suite was retired in 2013 (S66). Or they bought the challenger: GitHub for $7.5B (S50), LinkedIn for $26.2B (S46), Wiz for $32B (S20).",
+      "[A] But losers did the same things. Sun owned Java and the servers the web ran on, and was sold to Oracle in 2010 (S52). Informix owned a database and ended up inside IBM in 2001 (B01). Novell bought WordPerfect to fight Office and sold it within two years at a fraction of the price, and IBM bought Lotus and never won back the desktop (B01). So these are habits of survivors, not a recipe: this data can't show which of them caused survival, and the examples above were picked after the fact.",
       "[A] The AI era has no casualties yet. In February 2026 investors priced them in anyway (S18, S27).",
     ],
     graphic: "timeline",

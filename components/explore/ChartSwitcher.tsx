@@ -75,7 +75,7 @@ export const ChartSwitcher = ({
       role="tablist"
       aria-label="Chart"
       aria-orientation="horizontal"
-      className="flex flex-wrap gap-1 rounded-lg border border-border bg-card p-1"
+      className="scrollbar-none flex max-w-full gap-1 overflow-x-auto rounded-lg border border-border bg-card p-1 sm:flex-wrap"
     >
       {CHART_KEYS.map((key) => {
         const isActive = key === chart;
@@ -91,7 +91,7 @@ export const ChartSwitcher = ({
             onClick={() => onChartChange(key)}
             onKeyDown={handleKeyDown}
             className={cn(
-              "rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
+              "shrink-0 whitespace-nowrap rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
               { "bg-secondary text-foreground": isActive },
             )}
           >
