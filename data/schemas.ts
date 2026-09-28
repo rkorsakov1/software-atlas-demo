@@ -163,6 +163,7 @@ export const companySchema = z.object({
   revenueByYear: z.array(dataPointSchema),
   marketCapByYear: z.array(dataPointSchema).optional(),
   grossMarginByYear: z.array(dataPointSchema).optional(),
+  revenueIncludes: z.string().min(1).optional(),
   marketIds: z.array(z.string().min(1)),
   moats: z.record(moatKeySchema, moatScoreSchema),
   moatRationale: z.string().min(1),

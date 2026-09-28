@@ -127,6 +127,12 @@ export type Company = {
   revenueByYear: DataPoint[];
   marketCapByYear?: DataPoint[];
   grossMarginByYear?: DataPoint[];
+  /**
+   * Set when `revenueByYear` is whole-group revenue that is mostly not software,
+   * naming what else it counts ("online retail and advertising"). Charts that
+   * compare revenue label these companies rather than let them pass as software.
+   */
+  revenueIncludes?: string;
   marketIds: string[];
   moats: Record<MoatKey, MoatScore>;
   moatRationale: string;

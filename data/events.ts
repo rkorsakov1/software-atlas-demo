@@ -939,6 +939,30 @@ export const events: CompetitiveEvent[] = [
     sourceIds: ["S41"],
   },
   {
+    id: "evt-2022-us-ai-chip-export-controls",
+    year: 2022,
+    month: 10,
+    type: "regulation",
+    title: "US restricts exports of advanced AI chips to China",
+    companyIds: ["nvidia"],
+    marketIds: ["gpu-ai-cloud", "ai-model-infrastructure"],
+    impact:
+      "The rule restricts China's ability to obtain advanced computing chips and build supercomputers. From here, export policy decides where frontier models can be trained at scale, and which buyers the accelerator market may serve.",
+    sourceIds: ["S126"],
+  },
+  {
+    id: "evt-2023-llama-2-open-weights",
+    year: 2023,
+    month: 7,
+    type: "launch",
+    title: "Meta releases Llama 2 as open weights for commercial use",
+    companyIds: ["meta", "microsoft"],
+    marketIds: ["foundation-model-apis"],
+    impact:
+      "Free for research and commercial use, with Microsoft as preferred partner. A platform giant treated model weights as a complement to give away, which put a free alternative under every paid model API.",
+    sourceIds: ["S127"],
+  },
+  {
     id: "evt-2023-microsoft-activision-close",
     year: 2023,
     month: 10,
@@ -1222,6 +1246,18 @@ export const events: CompetitiveEvent[] = [
     sourceIds: ["S88"],
   },
   {
+    id: "evt-2025-deepseek-r1",
+    year: 2025,
+    month: 1,
+    type: "disruption",
+    title: "DeepSeek releases R1 under the MIT licence",
+    companyIds: ["deepseek", "nvidia", "openai"],
+    marketIds: ["foundation-model-apis", "gpu-ai-cloud"],
+    impact:
+      "Weights open to commercial use and distillation, reported 20 to 50 times cheaper to use than OpenAI's model. Nvidia fell nearly 17% and lost $593B of market value in a day, the largest one-day loss on Wall Street, on the fear that frontier capability needs less compute.",
+    sourceIds: ["S128", "S129"],
+  },
+  {
     id: "evt-2025-ibm-hashicorp",
     year: 2025,
     month: 2,
@@ -1243,6 +1279,30 @@ export const events: CompetitiveEvent[] = [
     impact:
       "The second commercial open-source infrastructure company absorbed by IBM, and a reminder that a restrictive licence protects revenue better than it protects independence.",
     sourceIds: ["S47"],
+  },
+  {
+    id: "evt-2025-nvidia-h20-licence",
+    year: 2025,
+    month: 4,
+    type: "regulation",
+    title: "US requires a licence to sell Nvidia's H20 chips in China",
+    companyIds: ["nvidia"],
+    marketIds: ["gpu-ai-cloud", "ai-model-infrastructure"],
+    impact:
+      "Nvidia took a $4.5B charge on H20 inventory and purchase obligations and could not ship a further $2.5B of H20 revenue that quarter. Export policy, not a competitor, set the size of its China market.",
+    sourceIds: ["S130", "S131"],
+  },
+  {
+    id: "evt-2025-openai-gpt-oss",
+    year: 2025,
+    month: 8,
+    type: "launch",
+    title: "OpenAI releases open-weight gpt-oss models under Apache 2.0",
+    companyIds: ["openai"],
+    marketIds: ["foundation-model-apis"],
+    impact:
+      "The lab most associated with closed APIs shipped 117B- and 21B-parameter open-weight models. Open weights stopped being only a challenger's tactic.",
+    sourceIds: ["S132"],
   },
   {
     id: "evt-2025-eu-teams-commitments",
@@ -1358,9 +1418,9 @@ export const events: CompetitiveEvent[] = [
   {
     id: "evt-2026-spacex-anysphere",
     year: 2026,
-    month: 6,
+    month: 8,
     type: "acquisition",
-    title: "SpaceX agrees to acquire Cursor's parent Anysphere",
+    title: "SpaceX acquires Cursor's parent Anysphere",
     companyIds: ["spacex", "anysphere", "microsoft"],
     marketIds: ["ai-coding-assistants", "developer-tools"],
     acquirerId: "spacex",
@@ -1369,14 +1429,14 @@ export const events: CompetitiveEvent[] = [
       value: 60,
       year: 2026,
       unit: "USD_B",
-      sourceId: "S21",
-      confidence: "estimated",
-      note: "All-stock headline value reported from the SpaceX filing via secondary coverage; roughly 23x the approximately $2.6B of annualised business revenue cited in the same reporting.",
+      sourceId: "S125",
+      confidence: "reported",
+      note: "Implied equity value in the SpaceX 8-K, paid in 389.3M Class A shares; roughly 23x the approximately $2.6B of annualised business revenue Reuters cited at signing.",
     },
-    status: "announced",
+    status: "completed",
     impact:
       "Priced as a capability acquisition rather than a revenue multiple, and larger by headline value than any venture-backed software acquisition before it.",
-    sourceIds: ["S21"],
+    sourceIds: ["S21", "S125"],
   },
   {
     id: "evt-2025-google-wiz-announced",

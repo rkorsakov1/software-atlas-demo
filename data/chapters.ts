@@ -77,6 +77,7 @@ export const chapters: StoryChapter[] = [
       "[I] These are roles, not labels. Microsoft is a platform giant, a suite consolidator and, through GitHub and VS Code, one of the biggest product-led businesses in software.",
       "[A] Two moves drive most of the story. Specialists get absorbed into suites: Slack by Salesforce for $27.7B (S82), Wiz by Google for $32B (S20), Informatica by Salesforce for about $8B (S84). And open-source companies change their licence, get forked, then partly walk it back: Elastic in 2021 (S54), Redis in 2024 (S55, S56).",
       "[A] In the chart, look at the clusters, not the ranking. Platform giants sit large and steady. AI natives sit small and fast-growing. PE-owned companies trade growth for cash.",
+      "[F] Some bubbles are group revenue, not software sales: Amazon's includes retail, Nvidia's and Apple's hardware, Google's and Meta's advertising. The chart labels them.",
     ],
     graphic: "bubble",
     graphicState: {

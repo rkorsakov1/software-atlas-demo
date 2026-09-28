@@ -47,7 +47,8 @@ const companiesWithRevenue = companies.filter((company) => company.revenueByYear
 const companiesWithMargin = companies.filter(
   (company) => (company.grossMarginByYear ?? []).length > 0,
 ).length;
-const marketsWithShares = markets.filter((market) => market.sharesByYear.length > 0).length;
+const companiesWithGroupRevenue = companies.filter((company) => company.revenueIncludes).length;
+const marketsWithShares =markets.filter((market) => market.sharesByYear.length > 0).length;
 
 /** Candidates on the emerging radar that are not framed around AI. */
 const NON_AI_EMERGING_IDS: readonly string[] = [
@@ -507,6 +508,14 @@ const MethodologyPage = (): React.ReactElement => (
             Five companies were dropped for lack of a clean total-cost-of-revenue tag, and two IBM
             years were skipped because a spin-off put the two inputs on different bases. AWS has no
             segment-level margin, so consolidated Amazon margin is used and labelled as such.
+          </li>
+          <li>
+            <strong className="font-semibold">Some revenue is not software.</strong> Revenue is the
+            company total as filed. For {companiesWithGroupRevenue} companies that total is mostly
+            something else: Amazon includes retail, Nvidia and Apple include hardware, Google and
+            Meta include advertising, Accenture is services. The bubble chart names them under the
+            plot, in the tooltip and in the table. Segment revenue isn&apos;t swapped in, because
+            the company, not the segment, is what the chart compares.
           </li>
           <li>
             <strong className="font-semibold">

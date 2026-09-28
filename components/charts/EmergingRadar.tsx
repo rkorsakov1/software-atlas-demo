@@ -70,11 +70,16 @@ const takeawayFor = (markets: readonly EmergingMarket[]): string => {
   if (markets.length === 0) {
     return "No emerging market matches the current filters.";
   }
-  const strongest = markets.reduce((best, market) =>
-    signalStrengthTotal(market) > signalStrengthTotal(best) ? market : best,
-  );
+  const topStrength = Math.max(...markets.map(signalStrengthTotal));
+  const leaders = markets.filter((market) => signalStrengthTotal(market) === topStrength);
   const near = markets.filter((market) => market.horizon === "0-2y").length;
-  return `${strongest.name} carries the most evidence behind it (${signalStrengthTotal(strongest)} points of signal); ${near} of ${markets.length} candidate markets sit inside the two-year ring.`;
+  const ringLine = `${near} of ${markets.length} candidate markets sit inside the two-year ring.`;
+  const [onlyLeader] = leaders;
+  if (onlyLeader && leaders.length === 1) {
+    return `${onlyLeader.name} carries the most evidence behind it (${topStrength} points of signal); ${ringLine}`;
+  }
+  const names = leaders.map((market) => market.name).join("; ");
+  return `${leaders.length} candidates tie for the most evidence, ${topStrength} points of signal each: ${names}. ${ringLine}`;
 };
 
 /**

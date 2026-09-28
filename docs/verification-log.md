@@ -2049,3 +2049,23 @@ loss for the foreseeable future"; "build the next computing platform", read. S12
 Q1–Q3 2025; smart glasses +211.2% in 2025, 29.3% CAGR 2025–2029, read. S124 UploadVR, 11 Feb 2026:
 "more than 7 million smart glasses in 2025", 2 million from October 2023 to February 2025, read
 (CNBC's version of the same figures returned 403).
+
+## 18. Reader review: Cursor close, revenue scope, open weights and export controls (2026-09-28)
+
+**Cursor.** S125 SpaceX Form 8-K, Item 2.01, on sec.gov, read: the merger "became effective" on
+14 August 2026, Cursor's shares converted into 389,289,254 SpaceX Class A shares "based on an implied
+equity value of Cursor of $60.0 billion". The event is now `completed`, dated August, and the deal
+value is `reported` from the filing instead of `estimated` from press coverage.
+
+**Revenue scope.** Sixteen companies now carry `revenueIncludes`, because their revenue is group
+revenue that is mostly not software (Amazon retail, Nvidia and Apple hardware, Google and Meta
+advertising, Accenture services, and others). The bubble chart names them. The figures are unchanged.
+
+**Open weights and export controls.** S126 BIS press release, 7 Oct 2022, read. S127 Meta newsroom,
+18 Jul 2023: "Llama 2 is free for research and commercial use", read. S128 DeepSeek-R1 model card on
+Hugging Face: weights "licensed under the MIT License", commercial use and distillation allowed, read.
+S129 Reuters via The Kathmandu Post, 28 Jan 2025: Nvidia down nearly 17%, $593B of market value lost,
+read (the CNBC version returned 403). S130 Nvidia 8-K, 9 Apr 2025: licence requirement for H20 to
+China and D:5 countries, read. S131 Nvidia Q1 FY2026 results on sec.gov: $4.5B H20 charge and $2.5B of
+H20 revenue it could not ship, read. S132 Hugging Face, 5 Aug 2025: gpt-oss 117B and 21B, Apache 2.0,
+read (openai.com returned 403).

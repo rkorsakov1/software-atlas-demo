@@ -28,9 +28,9 @@ export const emerging: EmergingMarket[] = [
       {
         type: "leading-indicator",
         evidence:
-          "SpaceX agreed on 16 June 2026 to acquire Cursor's parent Anysphere in an all-stock deal valuing it at $60B, structured through a wholly owned subsidiary and priced off a seven-day VWAP of SpaceX Class A stock.",
+          "SpaceX signed on 16 June 2026 and closed on 14 August 2026 its all-stock acquisition of Cursor's parent Anysphere, at an implied equity value of $60.0B paid in 389.3M SpaceX Class A shares.",
         strength: 3,
-        sourceIds: ["S21"],
+        sourceIds: ["S21", "S125"],
       },
       {
         type: "leading-indicator",

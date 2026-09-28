@@ -95,6 +95,13 @@ const METRIC_ORDER: readonly BubbleSizeMetric[] = ["marketCap", "grossMargin", "
 const MARKET_CAP_ABSENT =
   "Market capitalisation is not offered: no share-price series could be verified without reconstructing it, so the Atlas does not ship one.";
 
+/** "Group revenue, including …" for companies whose revenue is mostly not software. */
+const revenueScopeOf = (datum: BubbleDatum): string | null => {
+  const includes = datum.company.revenueIncludes;
+  if (!includes) return null;
+  return `Group revenue, including ${includes}`;
+};
+
 /** The note the table row carries under its confidence badge. */
 const tableNoteFor = (datum: BubbleDatum, sized: boolean, interpolated: boolean): string => {
   if (interpolated) return INTERPOLATED_BUBBLE_NOTE;
@@ -108,6 +115,7 @@ type BubbleTableRow = {
   name: string;
   archetype: Archetype;
   revenue: string;
+  revenueScope: string;
   growth: string;
   size: string;
   source: string;
@@ -185,6 +193,10 @@ export const CompetitiveBubble = ({
   );
 
   const unsizedCount = data.length - sizedData.length;
+  const groupRevenueNames = data
+    .filter((datum) => datum.company.revenueIncludes)
+    .map((datum) => datum.company.name)
+    .sort((a, b) => a.localeCompare(b));
 
   const maxRadius = useMemo(
     () => Math.min(narrow ? 20 : 34, Math.max(8, innerWidth / 9)),
@@ -315,7 +327,9 @@ export const CompetitiveBubble = ({
           ? ` No figure was filed for ${year}, so the value shown is interpolated between the two nearest reported years and the mark is drawn as modeled.`
           : "";
       const pinned = pinnedIds.includes(datum.company.id) ? " Pinned." : "";
-      return `${datum.company.name}, ${archetypeLabel[datum.company.archetype]}, ${year}: revenue ${formatValue(datum.revenue, datum.revenueBasis.unit)} (${revenueConfidenceText}), growth ${formatSignedPercent(datum.growth)}, ${sizeText}.${interpolationNote}${pinned}`;
+      const scope = revenueScopeOf(datum);
+      const scopeText = scope ? `, ${scope.charAt(0).toLowerCase()}${scope.slice(1)}` : "";
+      return `${datum.company.name}, ${archetypeLabel[datum.company.archetype]}, ${year}: revenue ${formatValue(datum.revenue, datum.revenueBasis.unit)} (${revenueConfidenceText}${scopeText}), growth ${formatSignedPercent(datum.growth)}, ${sizeText}.${interpolationNote}${pinned}`;
     },
     [pinnedIds, sizeMetric, year],
   );
@@ -447,16 +461,18 @@ export const CompetitiveBubble = ({
 
   const tooltipFootnote = useMemo(() => {
     if (!activeDatum) return undefined;
+    const scope = revenueScopeOf(activeDatum);
+    const scopeLine = scope ? `${scope}, not software alone. ` : "";
     const sized = isSizedByMetric(activeDatum, sizeMetric);
     const interpolated =
       activeDatum.revenueInterpolated || (sized && activeDatum.sizeInterpolated);
     if (interpolated) {
-      return `${INTERPOLATED_BUBBLE_NOTE} The mark is drawn as modeled for that reason, whatever the neighbouring years were filed as.`;
+      return `${scopeLine}${INTERPOLATED_BUBBLE_NOTE} The mark is drawn as modeled for that reason, whatever the neighbouring years were filed as.`;
     }
     if (!sized) {
-      return `No ${sizeMetricLabel[sizeMetric].toLowerCase()} figure for this company and year, so it is drawn as a dashed ring at a fixed radius rather than sized by another number.`;
+      return `${scopeLine}No ${sizeMetricLabel[sizeMetric].toLowerCase()} figure for this company and year, so it is drawn as a dashed ring at a fixed radius rather than sized by another number.`;
     }
-    return `Mark confidence: ${markConfidenceOf(activeDatum)} — the weaker of the figure that places the bubble and the figure that sizes it. ${radiusScale.description}`;
+    return `${scopeLine}Mark confidence: ${markConfidenceOf(activeDatum)} — the weaker of the figure that places the bubble and the figure that sizes it. ${radiusScale.description}`;
   }, [activeDatum, markConfidenceOf, radiusScale.description, sizeMetric]);
 
   const archetypesPresent = useMemo(
@@ -488,6 +504,7 @@ export const CompetitiveBubble = ({
             name: datum.company.name,
             archetype: datum.company.archetype,
             revenue: formatValue(datum.revenue, datum.revenueBasis.unit),
+            revenueScope: revenueScopeOf(datum) ?? "Software",
             growth: formatSignedPercent(datum.growth),
             size:
               sized && datum.sizeBasis
@@ -515,6 +532,7 @@ export const CompetitiveBubble = ({
         numeric: true,
         render: (row) => row.revenue,
       },
+      { key: "revenueScope", header: "Revenue counts", render: (row) => row.revenueScope },
       { key: "growth", header: "YoY growth", align: "right", numeric: true, render: (row) => row.growth },
       {
         key: "size",
@@ -897,6 +915,14 @@ export const CompetitiveBubble = ({
               : "Arrow keys move along the revenue axis, Enter opens the company, P (or shift-click) pins it and draws its trail."}
           </span>
         </p>
+
+        {groupRevenueNames.length === 0 ? null : (
+          <p className="mt-1 text-xs text-muted-foreground">
+            Group revenue, not software alone: {groupRevenueNames.join(", ")}. Their totals
+            include hardware, retail, advertising or services, so compare their position with
+            care.
+          </p>
+        )}
 
         {unsizedCount === 0 ? null : (
           <p className="mt-1 text-xs text-muted-foreground">

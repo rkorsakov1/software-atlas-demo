@@ -200,6 +200,7 @@ export const companies: Company[] = [
       [2024, 32.6],
       [2025, 31.9],
     ]),
+    revenueIncludes: "consulting and outsourcing services",
     marketIds: ["erp", "data-platforms-integration", "government-public-sector-software"],
     moats: { network: 1, switching: 3, scale: 4, data: 1, brand: 4, ecosystem: 3, regulatory: 2 },
     moatRationale:
@@ -451,6 +452,7 @@ export const companies: Company[] = [
       [2025, 40.0],
       [2026, 39.8],
     ]),
+    revenueIncludes: "commerce and logistics as well as Alibaba Cloud",
     marketIds: ["cloud-infrastructure", "databases"],
     moats: { network: 4, switching: 4, scale: 4, data: 3, brand: 3, ecosystem: 3, regulatory: 3 },
     moatRationale:
@@ -491,6 +493,7 @@ export const companies: Company[] = [
       ],
       "Modeled: 1 − cost of revenue ÷ revenue, both as filed. This is consolidated Amazon including retail, not AWS: segment cost of revenue is not separately tagged in any filing, so no AWS-only margin exists.",
     ),
+    revenueIncludes: "online retail, advertising and subscriptions as well as AWS",
     marketIds: [
       "cloud-infrastructure",
       "serverless-paas",
@@ -557,7 +560,9 @@ export const companies: Company[] = [
     archetype: "ai-native",
     secondaryArchetypes: ["plg-challenger"],
     hq: "San Francisco, California, US",
-    status: "private",
+    status: "acquired",
+    acquiredById: "spacex",
+    acquiredYear: 2026,
     revenueByYear: [runRate(2026, 2.6, 2.4, 2.8, "S21")],
     marketIds: ["ai-coding-assistants", "developer-tools"],
     moats: { network: 2, switching: 2, scale: 3, data: 3, brand: 4, ecosystem: 2, regulatory: 0 },
@@ -591,6 +596,7 @@ export const companies: Company[] = [
       [2013, 26.5],
       [2014, 24.0],
     ]),
+    revenueIncludes: "dial-up access and advertising",
     marketIds: ["social-messaging", "media-streaming"],
     moats: { network: 3, switching: 2, scale: 2, data: 1, brand: 3, ecosystem: 2, regulatory: 0 },
     moatRationale:
@@ -647,6 +653,7 @@ export const companies: Company[] = [
       [2024, 46.2],
       [2025, 46.9],
     ]),
+    revenueIncludes: "iPhone, Mac and other hardware",
     marketIds: ["mobile-os", "operating-systems", "media-streaming", "design-creative"],
     moats: { network: 5, switching: 5, scale: 5, data: 3, brand: 5, ecosystem: 5, regulatory: 3 },
     moatRationale:
@@ -817,6 +824,7 @@ export const companies: Company[] = [
       [2025, 73.8],
       [2026, 76.2],
     ]),
+    revenueIncludes: "handsets in its phone years",
     marketIds: ["mobile-os", "endpoint-security", "security-software"],
     moats: { network: 2, switching: 2, scale: 1, data: 1, brand: 2, ecosystem: 1, regulatory: 3 },
     moatRationale:
@@ -871,6 +879,7 @@ export const companies: Company[] = [
       [2024, 63.0],
       [2025, 67.8],
     ]),
+    revenueIncludes: "semiconductors as well as infrastructure software",
     marketIds: ["virtualization-private-cloud", "security-software", "itsm"],
     moats: { network: 1, switching: 5, scale: 4, data: 1, brand: 3, ecosystem: 3, regulatory: 1 },
     moatRationale:
@@ -1002,6 +1011,7 @@ export const companies: Company[] = [
       [2025, 64.9],
       [2026, 64.5],
     ]),
+    revenueIncludes: "networking hardware",
     marketIds: ["networking-cdn", "observability", "security-software", "collaboration-software"],
     moats: { network: 2, switching: 4, scale: 4, data: 2, brand: 4, ecosystem: 5, regulatory: 2 },
     moatRationale:
@@ -1566,6 +1576,7 @@ export const companies: Company[] = [
       [2024, 58.2],
       [2025, 59.7],
     ]),
+    revenueIncludes: "advertising as well as Google Cloud",
     marketIds: [
       "cloud-infrastructure",
       "mobile-os",
@@ -1785,6 +1796,7 @@ export const companies: Company[] = [
       ],
       `${GROSS_MARGIN_NOTE} FY2007-2018 are pre-Kyndryl-spin-off and FY2021 onward is post-spin, so the step between them is a change of basis; FY2019 and FY2020 are omitted because cost of revenue was filed on the post-spin basis while revenue was still pre-spin.`,
     ),
+    revenueIncludes: "consulting and infrastructure hardware",
     marketIds: [
       "server-os",
       "databases",
@@ -2003,6 +2015,7 @@ export const companies: Company[] = [
       [2024, 81.7],
       [2025, 82.0],
     ]),
+    revenueIncludes: "advertising and Reality Labs hardware",
     marketIds: [
       "social-messaging",
       "foundation-model-apis",
@@ -2432,6 +2445,7 @@ export const companies: Company[] = [
       [2025, 75.0],
       [2026, 71.1],
     ]),
+    revenueIncludes: "GPU and data-centre hardware",
     marketIds: ["ai-model-infrastructure", "gpu-ai-cloud", "developer-tools"],
     moats: { network: 4, switching: 5, scale: 5, data: 2, brand: 5, ecosystem: 5, regulatory: 3 },
     moatRationale:
@@ -2695,6 +2709,7 @@ export const companies: Company[] = [
       [2024, 19.5],
       [2025, 18.9],
     ]),
+    revenueIncludes: "managed hosting and cloud services",
     marketIds: ["cloud-infrastructure", "virtualization-private-cloud"],
     moats: { network: 1, switching: 3, scale: 2, data: 1, brand: 3, ecosystem: 3, regulatory: 2 },
     moatRationale:
@@ -2971,6 +2986,7 @@ export const companies: Company[] = [
         "Modeled: 1 − cost of revenue ÷ revenue, both as filed. For these two years the revenue fact is tagged on a Form 40-F and the cost fact on a Form 10-K; both are annual US-GAAP figures for identical periods.",
       ),
     ],
+    revenueIncludes: "payments and merchant services",
     marketIds: ["financial-services-software", "marketing-ad-tech"],
     moats: { network: 3, switching: 4, scale: 4, data: 3, brand: 5, ecosystem: 5, regulatory: 2 },
     moatRationale:
@@ -3262,6 +3278,7 @@ export const companies: Company[] = [
       ]),
       IFRS_FILED_NOTE,
     ),
+    revenueIncludes: "news, legal and tax information content",
     marketIds: ["legal-software", "financial-services-software", "government-public-sector-software"],
     moats: { network: 2, switching: 4, scale: 3, data: 5, brand: 5, ecosystem: 3, regulatory: 3 },
     moatRationale:
@@ -3286,6 +3303,7 @@ export const companies: Company[] = [
       ],
       "S116",
     ),
+    revenueIncludes: "payment processing and point-of-sale hardware",
     marketIds: ["restaurant-hospitality-software", "financial-services-software"],
     moats: { network: 2, switching: 4, scale: 3, data: 2, brand: 3, ecosystem: 2, regulatory: 2 },
     moatRationale:
